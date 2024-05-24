@@ -4,6 +4,10 @@ By, Kendal Daniel Muñoz Solano & Daniel Alonso Meneses Chavarria.
 ## Descripcion.
 El proyecto consiste en el desarrollo de un sitio web 
 
+##
+
+## Tecnologías Implementadas
+
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="45" alt="javascript logo"  />
   <img width="14" />
