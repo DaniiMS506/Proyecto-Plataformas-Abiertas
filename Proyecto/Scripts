@@ -49,6 +49,13 @@ CREATE TABLE DetalleVenta(
 	FOREIGN KEY (idPrenda) REFERENCES Prenda(idPrenda)
 );
 
+CREATE TABLE Inventario(
+    idInventario int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    idPrenda int NOT NULL,
+    idTalla int NOT NULL,
+    Cantidad int NOT NULL,
+    FOREIGN KEY (idPrenda) REFERENCES Prenda(idPrenda)
+);
 
 --Insercion de Datos en las tablas
 
