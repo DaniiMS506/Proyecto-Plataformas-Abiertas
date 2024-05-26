@@ -27,3 +27,5 @@ El proyecto consiste en el desarrollo de un sitio web de una tienda de ropa, con
 
 ## Diagrama Base de Datos
 ![Diagrama de Base de Datos](Documentación/Diagramas/Diagrama%20DB.jpg "Diagrama de la Base de Datos")
+
+###
