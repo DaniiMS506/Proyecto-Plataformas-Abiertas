@@ -4,8 +4,6 @@ By, Kendal Daniel Muñoz Solano & Daniel Alonso Meneses Chavarria.
 ## Descripción.
 El proyecto consiste en el desarrollo de un sitio web de una tienda de ropa, con su respectiva base de datos.
 
-##
-
 ## Tecnologías Implementadas
 
 <div align="center">
@@ -22,8 +20,7 @@ El proyecto consiste en el desarrollo de un sitio web de una tienda de ropa, con
   <img src="https://cdn.simpleicons.org/mysql/4479A1" height="45" alt="mysql logo"  />
 </div>
 
-
-###
+##
 
 ## Diagrama Base de Datos
 ![Diagrama de Base de Datos](Documentación/Diagramas/Diagrama%20DB.jpg "Diagrama de la Base de Datos")
