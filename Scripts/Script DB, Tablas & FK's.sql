@@ -59,3 +59,11 @@ CREATE TABLE DetalleVenta (
     FOREIGN KEY (idVenta) REFERENCES Venta(idVenta),
     FOREIGN KEY (idPrenda) REFERENCES Prenda(idPrenda)
 );
+
+CREATE TABLE Inventario(
+    idInventario int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    idPrenda int NOT NULL,
+    idTalla int NOT NULL,
+    Cantidad int NOT NULL,
+    FOREIGN KEY (idPrenda) REFERENCES Prenda(idPrenda)
+);
