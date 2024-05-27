@@ -28,3 +28,8 @@ INSERT INTO Venta (idUsuario, Fecha, Descripcion, Total) VALUES
 INSERT INTO DetalleVenta (idVenta, idPrenda, Cantidad) VALUES
 (1, 1, 1),
 (2, 2, 2);
+INSERT INTO Inventario (idPrenda, Cantidad)
+VALUES 
+(1, 9), 
+(2, 14),  
+(3, 20)
