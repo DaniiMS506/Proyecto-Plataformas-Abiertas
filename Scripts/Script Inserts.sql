@@ -35,7 +35,7 @@ VALUES
 (2, 14),  
 (3, 20);
 
-INSERT INTO ImagenPrenda (idPrenda, URL, Descripcion) VALUES
-(1, 'https://static.nike.com/a/images/t_default/fba909b5-4406-4eef-bde0-ba558bb77956/calzado-air-max-90-nqglHB.png', 'Nike Air Max'),
-(2, 'https://assets.adidas.com/images/w_600,f_auto,q_auto/6c2ff2aa567844589c96d15c2b8f99fb_9366/Ultraboost_Light_COLD.RDY_2.0_Shoes_Black_IE1677.jpg', 'Adidas Ultraboost'),
-(3, 'https://m.media-amazon.com/images/I/71PTqTOsg-L._AC_SL1500_.jpg', 'New Balance 574');
+INSERT INTO ImagenPrenda (idPrenda, TipoImagen, Ruta, Descripcion) VALUES
+(1, 'URL', 'https://static.nike.com/a/images/t_default/fba909b5-4406-4eef-bde0-ba558bb77956/calzado-air-max-90-nqglHB.png', 'Nike Air Max'),
+(2, 'URL', 'https://assets.adidas.com/images/w_600,f_auto,q_auto/6c2ff2aa567844589c96d15c2b8f99fb_9366/Ultraboost_Light_COLD.RDY_2.0_Shoes_Black_IE1677.jpg', 'Adidas Ultraboost'),
+(3, 'URL', 'https://m.media-amazon.com/images/I/71PTqTOsg-L._AC_SL1500_.jpg', 'New Balance 574');
