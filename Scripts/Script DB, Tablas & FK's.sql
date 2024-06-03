@@ -70,7 +70,7 @@ CREATE TABLE Inventario(
 CREATE TABLE ImagenPrenda (
     idImagen INT AUTO_INCREMENT PRIMARY KEY,
     idPrenda INT NOT NULL,
-    URL VARCHAR(255) NOT NULL,
     Descripcion VARCHAR(255),
+    imagen LONGBLOB NOT NULL,
     FOREIGN KEY (idPrenda) REFERENCES Prenda(idPrenda)
 );
