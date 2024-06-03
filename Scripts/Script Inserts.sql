@@ -38,4 +38,4 @@ VALUES
 INSERT INTO ImagenPrenda (idPrenda, Descripcion, imagen) VALUES 
 (1, 'Nike Air Max', LOAD_FILE('C:/xampp/htdocs/Proyecto Desarrollo con Plataformas Abiertas/Proyecto/IMG/Prendas/NikeAirMax.webp')),
 (2, 'Adidas Ultraboost', LOAD_FILE('C:/xampp/htdocs/Proyecto Desarrollo con Plataformas Abiertas/Proyecto/IMG/Prendas/AdidasUltraboost.avif')),
-(3, 'Adidas Ultraboost', LOAD_FILE('"C:\xampp\htdocs\Proyecto Desarrollo con Plataformas Abiertas\Proyecto\IMG\Prendas\NewBalance574.jpg"'));
+(3, 'Adidas Ultraboost', LOAD_FILE('C:/xampp/htdocs/Proyecto Desarrollo con Plataformas Abiertas/Proyecto/IMG/Prendas/NewBalance574.jpg'));
