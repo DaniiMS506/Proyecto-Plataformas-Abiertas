@@ -1,41 +1,41 @@
--- Inserción de Datos
-INSERT INTO Marca (Nombre, Descripcion) VALUES
-('Nike', 'Nike es una marca mundialmente conocida por su ropa deportiva, calzado y accesorios de alta calidad. Fundada en 1964, la empresa se dedica a inspirar y motivar a los atletas de todo el mundo.'),
-('Adidas', 'Adidas es una multinacional alemana de ropa y accesorios deportivos. Con una larga trayectoria en la innovación y el diseño, Adidas es sinónimo de rendimiento y estilo en el mundo del deporte.'),
-('New Balance', 'New Balance es una marca americana de calzado y ropa deportiva. Fundada en 1906, es conocida por su compromiso con la calidad, comodidad y la fabricación en EE.UU. y el Reino Unido.');
+-- Inserciones para la tabla Marca
+INSERT INTO Marca (Nombre, Descripcion) VALUES 
+('Nike', 'Marca deportiva de renombre internacional.'),
+('Adidas', 'Marca alemana conocida por sus productos deportivos.'),
+('Puma', 'Marca deportiva y de moda casual.'),
+('Levi\'s', 'Marca americana famosa por sus jeans.'),
+('Zara', 'Marca española de ropa y accesorios.');
 
-INSERT INTO Prenda (Nombre, Cantidad, Precio, Descripcion, idMarca) VALUES
-('Nike Air Max', 100, 120.00, 'Calzado deportivo de alta calidad y comodidad.', 1),
-('Adidas Ultraboost', 200, 180.00, 'Zapatillas de running con gran amortiguación y soporte.', 2),
-('New Balance 574', 150, 80.00, 'Zapatillas clásicas y cómodas para el uso diario.', 3);
+-- Inserciones para la tabla Prenda
+INSERT INTO Prenda (Nombre, Cantidad, Precio, Descripcion, Imagen, idMarca) VALUES 
+('Nike Air Jordan 1', 50, 90000.00, 'Zapatillas deportivas de baloncesto.', LOAD_FILE('C:/xampp/htdocs/Proyecto Desarrollo con Plataformas Abiertas/Proyecto/IMG/Prendas/NikeAirJordan1.jpg'), 1),
+('Nike Air Force 1', 60, 60000.00, 'Zapatillas clásicas de Nike.', LOAD_FILE('C:/xampp/htdocs/Proyecto Desarrollo con Plataformas Abiertas/Proyecto/IMG/Prendas/NikeAirForce1.jpg'), 1),
+('Adidas Ultraboost', 40, 108000.00, 'Zapatillas de running con máxima amortiguación.', LOAD_FILE('C:/xampp/htdocs/Proyecto Desarrollo con Plataformas Abiertas/Proyecto/IMG/Prendas/AdidasUltraboost.avif'), 2),
+('Puma Suede Classic', 30, 48000.00, 'Zapatillas icónicas de Puma.', LOAD_FILE('C:/xampp/htdocs/Proyecto Desarrollo con Plataformas Abiertas/Proyecto/IMG/Prendas/PumaSuedeClassic.jpg'), 3),
+('Levi\'s 501 Original Fit Jeans', 100, 36000.00, 'Jeans clásicos de Levi\'s.', LOAD_FILE('C:/xampp/htdocs/Proyecto Desarrollo con Plataformas Abiertas/Proyecto/IMG/Prendas/Levi\'s501OriginalFitJeans.jpg'), 4),
+('Zara Basic T-Shirt', 200, 12000.00, 'Camiseta básica de Zara.', LOAD_FILE('C:/xampp/htdocs/Proyecto Desarrollo con Plataformas Abiertas/Proyecto/IMG/Prendas/ZaraBasicT-Shirt.jpg'), 5);
 
-INSERT INTO Rol (Descripcion, NivelAcceso) VALUES
-('Administrador', 1),
-('Cliente', 2);
+-- Inserciones para la tabla Usuario
+INSERT INTO Usuario (Nombre, Apellidos, Rol, Email, Telefono, Direccion, Password) VALUES 
+('Juan', 'Pérez López', 1, 'juan.perez@gmail.com', '555-1234', 'Calle Falsa 123', 'password123'),
+('María', 'Gómez Ruiz', 2, 'maria.gomez@gmail.com', '555-5678', 'Avenida Siempre Viva 456', 'password456'),
+('Carlos', 'Díaz Fernández', 1, 'carlos.diaz@gmail.com', '555-8765', 'Boulevard de los Sueños 789', 'password789'),
+('Ana', 'Martínez Ortega', 3, 'ana.martinez@gmail.com', '555-4321', 'Camino Real 321', 'password321'),
+('Luis', 'Hernández López', 2, 'luis.hernandez@gmail.com', '555-9876', 'Paseo de la Reforma 654', 'password654');
 
-INSERT INTO Usuario (Nombre, Apellidos, idRol) VALUES
-('Juan', 'Perez', 2),
-('Maria', 'Gonzalez', 2);
+-- Inserciones para la tabla Venta
+INSERT INTO Venta (idUsuario, idPrenda, Cantidad, Fecha, Descripcion, Total) VALUES 
+(1, 1, 1, '2024-06-10 14:30:00', 'Compra de Nike Air Jordan 1.', 90000.00),
+(2, 3, 2, '2024-06-11 09:15:00', 'Compra de Adidas Ultraboost.', 216000.00),
+(3, 2, 1, '2024-06-11 11:45:00', 'Compra de Nike Air Force 1.', 60000.00),
+(4, 5, 1, '2024-06-11 16:00:00', 'Compra de Levi\'s 501 Original Fit Jeans.', 36000.00),
+(5, 4, 3, '2024-06-11 18:30:00', 'Compra de Puma Suede Classic.', 144000.00);
 
-INSERT INTO DatosUsuario (idUsuario, Email, Telefono, Direccion, Password) VALUES
-(1, 'juan.perez@gmail.com', '123456789', 'Calle Falsa 123', 'hashedpassword1'),
-(2, 'maria.gonzalez@gmail.com', '987654321', 'Avenida Siempreviva 456', 'hashedpassword2');
-
-INSERT INTO Venta (idUsuario, Fecha, Descripcion, Total) VALUES
-(1, '2023-05-20', 'Venta de Prenda 1', 19.99),
-(2, '2023-05-21', 'Venta de Prenda 2', 29.99);
-
-INSERT INTO DetalleVenta (idVenta, idPrenda, Cantidad) VALUES
-(1, 1, 1),
-(2, 2, 2);
-
-INSERT INTO Inventario (idPrenda, Cantidad)
-VALUES 
-(1, 9), 
-(2, 14),  
-(3, 20);
-
-INSERT INTO ImagenPrenda (idPrenda, Descripcion, imagen) VALUES 
-(1, 'Nike Air Max', LOAD_FILE('C:/xampp/htdocs/Proyecto Desarrollo con Plataformas Abiertas/Proyecto/IMG/Prendas/NikeAirMax.webp')),
-(2, 'Adidas Ultraboost', LOAD_FILE('C:/xampp/htdocs/Proyecto Desarrollo con Plataformas Abiertas/Proyecto/IMG/Prendas/AdidasUltraboost.avif')),
-(3, 'Adidas Ultraboost', LOAD_FILE('C:/xampp/htdocs/Proyecto Desarrollo con Plataformas Abiertas/Proyecto/IMG/Prendas/NewBalance574.jpg'));
+-- Inserciones para la tabla Venta
+INSERT INTO Inventario (idPrenda, Cantidad) VALUES 
+(1, 50),
+(2, 60),
+(3, 40),
+(4, 30),
+(5, 100),
+(6, 200);
