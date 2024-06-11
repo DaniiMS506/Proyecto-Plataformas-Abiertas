@@ -1,69 +1,44 @@
 <?php
-// Conexión a la base de datos
 $server = "localhost";
 $user = "root";
 $pass = "";
 $db = "tiendaropa";
 
-// Crear conexión
+// Conexión a la base de datos
 $conn = new mysqli($server, $user, $pass, $db);
-
-// Verificar la conexión
 if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+    die("Error de conexión: " . $conn->connect_error);
 }
 
-// Consulta para obtener las imágenes y descripciones de las prendas
-$sql = "SELECT Prenda.idPrenda, Prenda.Nombre AS NombrePrenda, ImagenPrenda.Descripcion AS DescripcionImagen, ImagenPrenda.imagen
-        FROM Prenda
-        INNER JOIN ImagenPrenda ON Prenda.idPrenda = ImagenPrenda.idPrenda";
+// Consulta SQL para obtener los datos de la tabla Prenda
+$sql = "SELECT idPrenda, Nombre, Cantidad, Precio, Descripcion, Imagen FROM Prenda";
 $result = $conn->query($sql);
 
-// Array para almacenar los datos de las prendas
-$prendas = array();
-
 if ($result->num_rows > 0) {
-    // Almacenar los datos de las prendas en el array
-    while($row = $result->fetch_assoc()) {
-        $prendas[] = $row;
-    }
-}
+    // Imprimir los datos en una tabla HTML
+    echo "<table border='1'>
+    <tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Cantidad</th>
+    <th>Precio</th>
+    <th>Descripción</th>
+    <th>Imagen</th>
+    </tr>";
 
-// Cerrar conexión
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . $row['idPrenda'] . "</td>";
+        echo "<td>" . $row['Nombre'] . "</td>";
+        echo "<td>" . $row['Cantidad'] . "</td>";
+        echo "<td>" . $row['Precio'] . "</td>";
+        echo "<td>" . $row['Descripcion'] . "</td>";
+        echo "<td><img src='data:image/jpeg;base64," . base64_encode($row['Imagen']) . "' width='100' height='100'/></td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+} else {
+    echo "0 resultados";
+}
 $conn->close();
 ?>
-
-<!-- HTML VIEW -->
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prendas</title>
-</head>
-<body>
-    <h1>Prendas</h1>
-    <table id="tablaPrendas">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Descripción de la imagen</th>
-                <th>Imagen</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($prendas as $prenda): ?>
-                <tr>
-                    <td><?php echo $prenda['NombrePrenda']; ?></td>
-                    <td><?php echo $prenda['DescripcionImagen']; ?></td>
-                    <td><img src="data:image/jpeg;base64,<?php echo base64_encode($prenda['imagen']); ?>" alt="<?php echo $prenda['NombrePrenda']; ?>" width="100"></td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-
-    <script>
-
-    </script>
-</body>
-</html>
