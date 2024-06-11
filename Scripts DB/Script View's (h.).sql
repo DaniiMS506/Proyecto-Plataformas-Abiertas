@@ -1,23 +1,23 @@
 -- i.
 CREATE VIEW MarcasConVentas AS
-SELECT DISTINCT M.Nombre, M.Descripcion
+SELECT DISTINCT M.*
 FROM Marca M
-JOIN Prenda P ON M.idMarca = P.idMarca
-JOIN DetalleVenta DV ON P.idPrenda = DV.idPrenda;
+INNER JOIN Prenda P ON M.idMarca = P.idMarca
+INNER JOIN Venta V ON P.idPrenda = V.idPrenda;
 
 -- ii.
-CREATE VIEW PrendasVendidasYStock AS
-SELECT P.Nombre, P.Cantidad AS Stock, SUM(DV.Cantidad) AS CantidadVendida
+CREATE VIEW PrendasConStock AS
+SELECT P.idPrenda, P.Nombre, P.Cantidad AS Stock_Restante, IFNULL(SUM(V.Cantidad), 0) AS Cantidad_Vendida
 FROM Prenda P
-JOIN DetalleVenta DV ON P.idPrenda = DV.idPrenda
-GROUP BY P.Nombre, P.Cantidad;
+LEFT JOIN Venta V ON P.idPrenda = V.idPrenda
+GROUP BY P.idPrenda, P.Nombre, P.Cantidad;
 
 -- iii. 
-CREATE VIEW Top5MarcasMasVendidas AS
-SELECT M.Nombre, COUNT(DV.idDetalleVenta) AS CantidadVentas
+CREATE VIEW Top5MarcasVendidas AS
+SELECT M.Nombre AS Marca, COUNT(V.idVenta) AS Cantidad_Ventas
 FROM Marca M
-JOIN Prenda P ON M.idMarca = P.idMarca
-JOIN DetalleVenta DV ON P.idPrenda = DV.idPrenda
-GROUP BY M.Nombre
-ORDER BY CantidadVentas DESC
+INNER JOIN Prenda P ON M.idMarca = P.idMarca
+INNER JOIN Venta V ON P.idPrenda = V.idPrenda
+GROUP BY M.idMarca
+ORDER BY Cantidad_Ventas DESC
 LIMIT 5;

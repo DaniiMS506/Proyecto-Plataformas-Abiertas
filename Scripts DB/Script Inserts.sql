@@ -25,11 +25,11 @@ INSERT INTO Usuario (Nombre, Apellidos, Rol, Email, Telefono, Direccion, Passwor
 
 -- Inserciones para la tabla Venta
 INSERT INTO Venta (idUsuario, idPrenda, Cantidad, Fecha, Descripcion, Total) VALUES 
-(1, 1, 1, '2024-06-10 14:30:00', 'Compra de Nike Air Jordan 1.', 90000.00),
-(2, 3, 2, '2024-06-11 09:15:00', 'Compra de Adidas Ultraboost.', 216000.00),
-(3, 2, 1, '2024-06-11 11:45:00', 'Compra de Nike Air Force 1.', 60000.00),
-(4, 5, 1, '2024-06-11 16:00:00', 'Compra de Levi\'s 501 Original Fit Jeans.', 36000.00),
-(5, 4, 3, '2024-06-11 18:30:00', 'Compra de Puma Suede Classic.', 144000.00);
+(1, 1, 1, '2024-06-10', 'Compra de Nike Air Jordan 1.', 90000.00),
+(2, 3, 2, '2024-06-11', 'Compra de Adidas Ultraboost.', 216000.00),
+(3, 2, 1, '2024-06-11', 'Compra de Nike Air Force 1.', 60000.00),
+(4, 5, 1, '2024-06-11', 'Compra de Levi\'s 501 Original Fit Jeans.', 36000.00),
+(5, 4, 3, '2024-06-11', 'Compra de Puma Suede Classic.', 144000.00);
 
 -- Inserciones para la tabla Venta
 INSERT INTO Inventario (idPrenda, Cantidad) VALUES 

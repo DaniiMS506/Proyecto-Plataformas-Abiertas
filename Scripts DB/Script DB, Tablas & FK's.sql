@@ -34,14 +34,14 @@ CREATE TABLE Usuario (
 
 CREATE TABLE Venta (
     idVenta INT AUTO_INCREMENT PRIMARY KEY,
-    idUsuario INT NOT NULL,
-	idPrenda INT NOT NULL,
-	Cantidad INT NOT NULL,
-    Fecha DATETIME NOT NULL,
+    idUsuario INT NULL,
+    idPrenda INT NULL,
+    Cantidad INT NOT NULL,
+    Fecha DATE NOT NULL,
     Descripcion VARCHAR(255),
     Total DECIMAL(10, 2) NOT NULL,
     FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario),
-	FOREIGN KEY (idPrenda) REFERENCES Prenda(idPrenda)
+    FOREIGN KEY (idPrenda) REFERENCES Prenda(idPrenda)
 );
 
 
