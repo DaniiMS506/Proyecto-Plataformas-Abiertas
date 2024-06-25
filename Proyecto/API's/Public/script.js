@@ -1,3 +1,5 @@
+/* Enlace de la API: https://fakestoreapi.com/docs */
+
 //Funcion para optener productos
 function getCharacters(done) {
     const results = fetch("https://fakestoreapi.com/products");
