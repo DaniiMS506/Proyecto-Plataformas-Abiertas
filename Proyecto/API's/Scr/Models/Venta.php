@@ -12,7 +12,7 @@
 
         public function all()
         {
-            $stmt = $this->db->query("select * from Venta");
+            $stmt = $this->db->query("SELECT * FROM Venta");
             return $stmt->fetchAll();
         }
 
