@@ -95,7 +95,7 @@
     
     //Error en URL
     else{
-        include "error/response.html";
+        include "error/Response.html";
     }
 
 ?>
