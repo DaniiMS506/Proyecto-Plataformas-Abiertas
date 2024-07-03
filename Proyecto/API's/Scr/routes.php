@@ -5,6 +5,9 @@
     // Controllers
     require_once (__DIR__ . '/../Scr/Controllers/PrendaController.php');
     require_once (__DIR__ . '/../Scr/Controllers/MarcaController.php');
+    require_once (__DIR__ . '/../Scr/Controllers/InventarioController.php');
+    require_once (__DIR__ . '/../Scr/Controllers/UsuarioController.php');
+    require_once (__DIR__ . '/../Scr/Controllers/VentaController.php');
 
 /* *********************************************************************************************************************** */
 
@@ -38,6 +41,51 @@
         switch ($method) {
             case 'GET':
                 $objectosMarca->get();
+                
+                break;
+            default:
+                Response::json(['error' => 'Metodo no permitido'], 405);
+        }
+    }
+
+    // Inventario
+    elseif($path  == "Inventario")
+    {
+        $objectosInventario = new InventarioController();
+    
+        switch ($method) {
+            case 'GET':
+                $objectosInventario->get();
+                
+                break;
+            default:
+                Response::json(['error' => 'Metodo no permitido'], 405);
+        }
+    }
+
+    // Usuario
+    elseif($path  == "Usuario")
+    {
+        $objectosUsuario = new UsuarioController();
+    
+        switch ($method) {
+            case 'GET':
+                $objectosUsuario->get();
+                
+                break;
+            default:
+                Response::json(['error' => 'Metodo no permitido'], 405);
+        }
+    }
+
+    // Venta
+    elseif($path  == "Venta")
+    {
+        $objectosVenta = new VentaController();
+    
+        switch ($method) {
+            case 'GET':
+                $objectosVenta->get();
                 
                 break;
             default:
