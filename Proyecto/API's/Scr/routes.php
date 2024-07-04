@@ -13,10 +13,10 @@
 
     /* Logica de la API */
     $method = $_SERVER['REQUEST_METHOD'];
-    var_dump($method ); //get
+    //var_dump($method ); //get
 
     $path = trim($_SERVER['PATH_INFO'], '/');
-    var_dump($path); // prueba
+    //var_dump($path); // prueba
 
     //Llamado de API's ejm: 
     // http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Prenda
