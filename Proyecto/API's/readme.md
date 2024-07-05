@@ -58,6 +58,9 @@ Crear los siguientes archivos:
 
 ### Endpoints Eliminar  (*Delete*)
 
+##
+
+#### Notas: *Para usar la busqueda por ID utilice solamente (Prenda, Inventario y Usuario) en la URL deberá colocar un signo de pregunta '?' seguido de (idPrenda, idInventario y idUsuario) respectivamente para cada caso, acompañado de un igual '=' junto al numero del ID que desea filtrar la busqueda, ejemplo: URL/Prenda?idPrenda=3*
 
 ##
 ###
