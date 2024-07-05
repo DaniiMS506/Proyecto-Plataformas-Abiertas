@@ -44,6 +44,8 @@ Crear los siguientes archivos:
 5. Consulta Venta
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Venta
 
+##
+
 ### Endpoints Consultas VIEWS (*Vistas*)
 1. Consulta de Vista Todas las Marcas con Ventas
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/MarcaConVentas
@@ -52,10 +54,12 @@ Crear los siguientes archivos:
 3. Consulta de Vista de las Top 5 Marcas más Vendidas con Cantidad Vendida
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Top5MarcasVendidas
 
+##
+
 ### Endpoints Insertar **POST** (*Insert / Create*)
 1. Insertar datos en Prenda **POST**
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Prenda
-   2. Debe colocar los datos de esta forma en 'Body' y 'Raw', utilizando Postman (' {
+   2. Debe colocar los datos con este formato, en 'Body', 'Raw', utilizando Postman (' {
          "Nombre": "Bolso Gucci",
          "Cantidad": 22,
          "Precio": 668,
@@ -65,7 +69,7 @@ Crear los siguientes archivos:
       } ')
 2. Insertar datos en Marca **POST**
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Marca 
-   2. Debe colocar los datos de esta forma en 'Body' y 'Raw', utilizando Postman (' {
+   2. Debe colocar los datos con este formato, en 'Body', 'Raw', utilizando Postman (' {
          "Nombre": "Gucci",
          "Descripcion": "Ropa Gucci"
       } ')
@@ -73,8 +77,11 @@ Crear los siguientes archivos:
 4. Insertar datos en Usuario **POST**
 5. Insertar datos en Venta **POST**
 
+##
 
 ### Endpoints Actualizar **PUT** (*Update*)
+
+##
 
 ### Endpoints Eliminar **DELETE** (*Delete*)
 
