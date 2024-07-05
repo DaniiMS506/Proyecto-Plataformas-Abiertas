@@ -104,10 +104,48 @@ Crear los siguientes archivos:
 ##
 
 ### Endpoints Actualizar **PUT** (*Update*)
+1. Actualizar datos de Prenda
+   1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Prenda?idPrenda=6
+   2. Debe colocar los datos con este formato, en 'Body', 'Raw', utilizando Postman (' {
+         "Nombre": "Zara Basic T-Shirt",
+         "Cantidad": 200,
+         "Precio": 12500,
+         "Descripcion": "Camiseta básica de Zara.",
+         "idMarca": 5
+      } ')
+2. Actualizar datos de Marca
+   1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Marca?idMarca=6
+   2. Debe colocar los datos con este formato, en 'Body', 'Raw', utilizando Postman (' {
+         "Nombre": "Guess",
+         "Descripcion": "Articulos de la marca Guess Originales"
+      } ')
+3. Actualizar datos de Inventario
+   1. 
+   2. 
+4. Actualizar datos de Usuario
+   1. 
+   2. 
+5. Actualizar datos de Venta
+   1. 
+   2. 
+
+##### Nota: *Para actualizar un registro coloque la URL seguido del signo '?', el nombre, y el 'ID' del elemento que desea actualizar junto a su numero, ejemplo URL/Prenda?idMarca=6*
 
 ##
 
 ### Endpoints Eliminar **DELETE** (*Delete*)
+1. Eliminar datos de Prenda 
+   1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Prenda?idPrenda=7 
+2. Eliminar datos de Marca
+   1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Marca?idMarca=7
+3. Eliminar datos de Inventario 
+   1. 
+4. Eliminar datos de Usuario 
+   1. 
+5. Eliminar datos de Venta
+   1. 
+
+##### Nota: *Para eliminar un registro coloque la URL seguido del signo '?', el nombre, y el 'ID' del elemento que desea eliminar junto a su numero, ejemplo URL/Prenda?idPrenda=7*
 
 ##
 

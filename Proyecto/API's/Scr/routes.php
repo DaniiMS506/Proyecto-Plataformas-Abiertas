@@ -12,11 +12,23 @@ require_once(__DIR__ . '/../Scr/Controllers/VentaController.php');
 /* *********************************************************************************************************************** */
 
 /* Logica de la API */
+
+// Obtener el Método de la Solicitud
 $method = $_SERVER['REQUEST_METHOD'];
 //var_dump($method ); //prueba get
 
+// Obtener y Procesar la Información del Path
 $path = trim($_SERVER['PATH_INFO'], '/');
 //var_dump($path); // prueba path
+
+// Dividir el Path en Segmentos
+$segmentosDeUrl = explode('/', $path);
+
+// Obtener el Primer Segmento como Ruta del Controlador
+$rutaControlador = array_shift($segmentosDeUrl );
+
+// Obtener el Último Segmento como ID
+$id = end($segmentosDeUrl );
 
 //Llamado de API's ejm: 
 // http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Prenda
@@ -31,6 +43,12 @@ if ($path  == "Prenda") {
             break;
         case 'POST':
             $objectosPrenda->create();
+            break;
+        case 'PUT':
+            $objectosPrenda->update($id);
+            break;
+        case 'DELETE':
+            $objectosPrenda->delete($id);
             break;
         default:
             Response::json(['error' => 'Metodo no permitido'], 405);
@@ -60,6 +78,12 @@ elseif ($path  == "Marca") {
             break;
         case 'POST':
             $objectosMarca->create();
+            break;
+        case 'PUT':
+            $objectosMarca->update($id);
+            break;
+        case 'DELETE':
+            $objectosMarca->delete($id);
             break;
         default:
             Response::json(['error' => 'Metodo no permitido'], 405);

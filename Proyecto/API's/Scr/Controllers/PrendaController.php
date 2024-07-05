@@ -50,12 +50,28 @@ class PrendaController
     }
 
 
-    //CREATE INSERT
+    // CREATE INSERT
     public function create()
     {
         $data = json_decode(file_get_contents('php://input'), true);
         //var_dump($data);
         echo  json_encode($this->model->create($data));
+    }
+
+
+    // UPDATE
+    public function update($id){
+        $id = $_GET['idPrenda'];
+        $data = json_decode(file_get_contents('php://input'), true);
+        echo json_encode($this->model->update($id, $data));
+    }
+
+
+    // DELETE
+    public function delete($id)
+    {
+        $idPrenda = $_GET['idPrenda']; // Obtiene el ID desde los parámetros de la consulta
+        echo json_encode($this->model->delete($idPrenda));
     }
 }
 ?>
