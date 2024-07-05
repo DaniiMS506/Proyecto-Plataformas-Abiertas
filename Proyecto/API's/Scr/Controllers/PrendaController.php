@@ -48,4 +48,13 @@ class PrendaController
     {
         echo json_encode($this->model->allWithStock());
     }
+
+
+    //CREATE INSERT
+    public function create(){
+        $data = json_decode(file_get_contents('php://input'), true);
+        var_dump($data);
+
+        echo  json_encode($this->model->create($data));
+    }
 }

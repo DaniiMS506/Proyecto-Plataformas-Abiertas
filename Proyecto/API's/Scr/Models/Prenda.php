@@ -31,4 +31,12 @@ class Prenda
         $stmt = $this->db->query("SELECT * FROM PrendasConStock");
         return $stmt->fetchAll();
     }
+
+
+    //CREATE INSERT
+    public function create($data) {
+        $stmt = $this->db->prepare("INSERT INTO prenda (idPrenda, Nombre, Cantidad, Precio, Descripcion, Imagen, idMarca) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$data['idPrenda'], $data['Nombre'], $data['Cantidad'], $data['Precio'], $data['Descripcion'], $data['Imagen'], $data['idMarca']]);
+        return ['id' => $this->db->lastInsertId()];
+    }
 }

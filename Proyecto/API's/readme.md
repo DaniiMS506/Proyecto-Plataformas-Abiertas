@@ -52,11 +52,11 @@ Crear los siguientes archivos:
 3. Consulta de Vista de las Top 5 Marcas más Vendidas con Cantidad Vendida
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Top5MarcasVendidas
 
-### Endpoints Insertar  (*Insert / Create*)
+### Endpoints Insertar **POST** (*Insert / Create*)
 
-### Endpoints Actualizar  (*Update*)
+### Endpoints Actualizar **PUT** (*Update*)
 
-### Endpoints Eliminar  (*Delete*)
+### Endpoints Eliminar **DELETE** (*Delete*)
 
 ##
 

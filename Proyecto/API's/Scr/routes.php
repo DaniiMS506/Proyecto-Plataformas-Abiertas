@@ -28,11 +28,14 @@
             case 'GET':
                 $objectosPrenda->get();
                 break;
+            case 'POST':
+                $objectosPrenda->create();
+                break;
             default:
                 Response::json(['error' => 'Metodo no permitido'], 405);
         }
     }
-    // PRENDAS CON STOK
+    // PRENDAS CON STOCK VIEW
     elseif($path  == "PrendasConStock")
     {
         $objectosPrenda = new PrendaController();
@@ -61,7 +64,7 @@
                 Response::json(['error' => 'Metodo no permitido'], 405);
         }
     }
-    // MARCAS CON VENTAS
+    // MARCAS CON VENTAS VIEW
     elseif($path  == "MarcaConVentas")
     {
         $objectosMarca = new MarcaController();
@@ -74,7 +77,7 @@
                 Response::json(['error' => 'Metodo no permitido'], 405);
         }
     }
-    // MARCAS TOP 5 VENDIDAS
+    // MARCAS TOP 5 VENDIDAS VIEW
     elseif($path  == "Top5MarcasVendidas")
     {
         $objectosMarca = new MarcaController();
