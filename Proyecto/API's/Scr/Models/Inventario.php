@@ -16,6 +16,14 @@
             return $stmt->fetchAll();
         }
 
+        // Function Consulta por ID
+        public function find($id)
+        {
+            $stmt = $this->db->prepare("SELECT * FROM Inventario WHERE idInventario = ?");
+            $stmt->execute([$id]);
+            return $stmt->fetch();
+        }
+
     }
 
 ?>
