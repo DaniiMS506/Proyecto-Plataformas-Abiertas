@@ -15,5 +15,12 @@ class Prenda
         $stmt = $this->db->query("SELECT * FROM prenda");
         return $stmt->fetchAll();
     }
+
+    // Function Consulta por ID !Imagen por formato
+    public function find($id)
+    {
+        $stmt = $this->db->prepare("SELECT idPrenda, Nombre, Cantidad, Precio, Descripcion, idMarca FROM prenda WHERE idPrenda = ?");
+        $stmt->execute([$id]);
+        return $stmt->fetch();
+    }
 }
-?>
