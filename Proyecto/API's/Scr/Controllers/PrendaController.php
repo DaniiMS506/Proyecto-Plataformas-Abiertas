@@ -41,4 +41,11 @@ class PrendaController
             }
         }
     }
+
+
+    // Método para obtener todas las prendas con stock VIEW
+    public function getWithStock()
+    {
+        echo json_encode($this->model->allWithStock());
+    }
 }

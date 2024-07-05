@@ -32,6 +32,20 @@
                 Response::json(['error' => 'Metodo no permitido'], 405);
         }
     }
+    // PRENDAS CON STOK
+    elseif($path  == "PrendasConStock")
+    {
+        $objectosPrenda = new PrendaController();
+
+        switch ($method) {
+            case 'GET':
+                $objectosPrenda->getWithStock();
+                break;
+            default:
+                Response::json(['error' => 'Metodo no permitido'], 405);
+        }
+    }
+
     
     // MARCA
     elseif($path  == "Marca")
@@ -47,6 +61,33 @@
                 Response::json(['error' => 'Metodo no permitido'], 405);
         }
     }
+    // MARCAS CON VENTAS
+    elseif($path  == "MarcaConVentas")
+    {
+        $objectosMarca = new MarcaController();
+
+        switch ($method) {
+            case 'GET':
+                $objectosMarca->getWithSales();
+                break;
+            default:
+                Response::json(['error' => 'Metodo no permitido'], 405);
+        }
+    }
+    // MARCAS TOP 5 VENDIDAS
+    elseif($path  == "Top5MarcasVendidas")
+    {
+        $objectosMarca = new MarcaController();
+
+        switch ($method) {
+            case 'GET':
+                $objectosMarca->getTopSales();
+                break;
+            default:
+                Response::json(['error' => 'Metodo no permitido'], 405);
+        }
+    }
+
 
     // Inventario
     elseif($path  == "Inventario")
@@ -63,6 +104,7 @@
         }
     }
 
+
     // Usuario
     elseif($path  == "Usuario")
     {
@@ -77,6 +119,7 @@
                 Response::json(['error' => 'Metodo no permitido'], 405);
         }
     }
+
 
     // Venta
     elseif($path  == "Venta")
@@ -93,6 +136,7 @@
         }
     }
     
+
     //Error en URL
     else{
         include "error/Response.html";

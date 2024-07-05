@@ -23,4 +23,12 @@ class Prenda
         $stmt->execute([$id]);
         return $stmt->fetch();
     }
+
+
+    // Método para obtener todas las prendas con stock VIEW
+    public function allWithStock()
+    {
+        $stmt = $this->db->query("SELECT * FROM PrendasConStock");
+        return $stmt->fetchAll();
+    }
 }

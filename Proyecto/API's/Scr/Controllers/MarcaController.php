@@ -20,6 +20,18 @@ class MarcaController
     {
         echo json_encode($this->model->all());
     }
+
+    // Método para obtener todas las marcas con ventas VIEW
+    public function getWithSales()
+    {
+        echo json_encode($this->model->allWithSales());
+    }
+
+    // Método para obtener top 5 marcas vendidas VIEW
+    public function getTopSales()
+    {
+        echo json_encode($this->model->topSales());
+    }
 }
 
 ?>

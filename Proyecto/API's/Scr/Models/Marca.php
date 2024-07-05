@@ -16,6 +16,20 @@
             return $stmt->fetchAll();
         }
 
+        // Método para obtener todas las marcas con ventas VIEW
+        public function allWithSales()
+        {
+            $stmt = $this->db->query("SELECT * FROM MarcasConVentas");
+            return $stmt->fetchAll();
+        }
+
+        // Método para obtener top 5 marcas vendidas VIEW
+        public function topSales()
+        {
+            $stmt = $this->db->query("SELECT * FROM Top5MarcasVendidas");
+            return $stmt->fetchAll();
+        }
+
     }
 
 ?>

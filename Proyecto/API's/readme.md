@@ -43,3 +43,15 @@ Crear los siguientes archivos:
       1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Usuario?idUsuario=2
 5. Consulta Venta
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Venta
+
+### Endpoints Consultas VIEWS (*Vistas*)
+1. Consulta de Vista Todas las Marcas con Ventas
+   1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/MarcaConVentas
+2. Consulta de Vista Prendas con Stock
+   1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/PrendasConStock 
+3. Consulta de Vista 
+   1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Top5MarcasVendidas
+
+
+##
+###
