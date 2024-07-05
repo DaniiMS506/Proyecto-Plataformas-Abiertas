@@ -74,8 +74,32 @@ Crear los siguientes archivos:
          "Descripcion": "Ropa Gucci"
       } ')
 3. Insertar datos en Inventario **POST**
+   1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Inventario
+   2. Debe colocar los datos con este formato, en 'Body', 'Raw', utilizando Postman (' {
+         "idPrenda": 7,
+         "Cantidad": 22
+      } ')
 4. Insertar datos en Usuario **POST**
+   1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Usuario
+   2. Debe colocar los datos con este formato, en 'Body', 'Raw', utilizando Postman (' {
+         "Nombre": "Genesis",
+         "Apellidos": "Zuñiga",
+         "Rol": 2,
+         "Email": "Genesis@gmail.com",
+         "Telefono": "555-1233",
+         "Direccion": "Calle 31 Cartago",
+         "Password": "123"
+      } ')
 5. Insertar datos en Venta **POST**
+   1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Venta
+   2. Debe colocar los datos con este formato, en 'Body', 'Raw', utilizando Postman (' {
+         "idUsuario": 6,
+         "idPrenda": 7,
+         "Cantidad": 1,
+         "Fecha": "2024-07-05",
+         "Descripcion": "Compra Bolso Gucci",
+         "Total": 668
+      } ')
 
 ##
 

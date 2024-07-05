@@ -1,6 +1,6 @@
 <?php
 
-require_once (__DIR__ . '/../Models/Usuario.php');
+require_once(__DIR__ . '/../Models/Usuario.php');
 
 
 class UsuarioController
@@ -35,6 +35,13 @@ class UsuarioController
         }
     }
 
-}
 
+    //CREATE INSERT
+    public function create()
+    {
+        $data = json_decode(file_get_contents('php://input'), true);
+        //var_dump($data);
+        echo  json_encode($this->model->create($data));
+    }
+}
 ?>

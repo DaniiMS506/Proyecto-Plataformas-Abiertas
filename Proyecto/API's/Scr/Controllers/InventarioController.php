@@ -16,11 +16,6 @@ class InventarioController
     }
 
 
-    /*public function get()
-    {
-        echo json_encode($this->model->all());
-    }*/
-
     public function get()
     {
         // Obtener el idInventario de la URL si está presente
@@ -34,6 +29,14 @@ class InventarioController
             // Si no se proporciona idInventario, devolver todo el inventario
             echo json_encode($this->model->all());
         }
+    }
+    
+
+    //CREATE INSERT
+    public function create(){
+        $data = json_decode(file_get_contents('php://input'), true);
+        //var_dump($data);
+        echo  json_encode($this->model->create($data));
     }
 }
 
