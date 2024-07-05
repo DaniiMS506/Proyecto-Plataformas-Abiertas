@@ -35,8 +35,8 @@ class Prenda
 
     //CREATE INSERT
     public function create($data) {
-        $stmt = $this->db->prepare("INSERT INTO prenda (idPrenda, Nombre, Cantidad, Precio, Descripcion, Imagen, idMarca) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$data['idPrenda'], $data['Nombre'], $data['Cantidad'], $data['Precio'], $data['Descripcion'], $data['Imagen'], $data['idMarca']]);
+        $stmt = $this->db->prepare("INSERT INTO prenda (Nombre, Cantidad, Precio, Descripcion, Imagen, idMarca) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$data['Nombre'], $data['Cantidad'], $data['Precio'], $data['Descripcion'], $data['Imagen'], $data['idMarca']]);
         return ['id' => $this->db->lastInsertId()];
     }
 }

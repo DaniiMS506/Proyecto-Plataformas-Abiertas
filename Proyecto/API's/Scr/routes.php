@@ -58,7 +58,9 @@
         switch ($method) {
             case 'GET':
                 $objectosMarca->get();
-                
+                break;
+            case 'POST':
+                $objectosMarca->create();
                 break;
             default:
                 Response::json(['error' => 'Metodo no permitido'], 405);

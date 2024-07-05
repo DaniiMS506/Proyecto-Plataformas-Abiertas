@@ -30,6 +30,14 @@
             return $stmt->fetchAll();
         }
 
+
+        //CREATE INSERT
+        public function create($data) {
+        $stmt = $this->db->prepare("INSERT INTO Marca (Nombre, Descripcion) VALUES (?, ?)");
+        $stmt->execute([$data['Nombre'], $data['Descripcion']]);
+        return ['id' => $this->db->lastInsertId()];
+        }
+
     }
 
 ?>

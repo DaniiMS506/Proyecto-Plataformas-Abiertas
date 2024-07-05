@@ -53,6 +53,26 @@ Crear los siguientes archivos:
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Top5MarcasVendidas
 
 ### Endpoints Insertar **POST** (*Insert / Create*)
+1. Insertar datos en Prenda **POST**
+   1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Prenda
+   2. Debe colocar los datos de esta forma en 'Body' y 'Raw', utilizando Postman (' {
+         "Nombre": "Bolso Gucci",
+         "Cantidad": 22,
+         "Precio": 668,
+         "Descripcion": "Bolso Gucci Pequeño",
+         "Imagen": "",
+         "idMarca": 7
+      } ')
+2. Insertar datos en Marca **POST**
+   1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Marca 
+   2. Debe colocar los datos de esta forma en 'Body' y 'Raw', utilizando Postman (' {
+         "Nombre": "Gucci",
+         "Descripcion": "Ropa Gucci"
+      } ')
+3. Insertar datos en Inventario **POST**
+4. Insertar datos en Usuario **POST**
+5. Insertar datos en Venta **POST**
+
 
 ### Endpoints Actualizar **PUT** (*Update*)
 
