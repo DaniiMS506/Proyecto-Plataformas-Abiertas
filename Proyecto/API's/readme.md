@@ -47,9 +47,9 @@ Crear los siguientes archivos:
 ### Endpoints Consultas VIEWS (*Vistas*)
 1. Consulta de Vista Todas las Marcas con Ventas
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/MarcaConVentas
-2. Consulta de Vista Prendas con Stock
+2. Consulta de Vista Prendas con Stock y Cantidad Vendida
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/PrendasConStock 
-3. Consulta de Vista de las Top 5 Marcas más Vendidas 
+3. Consulta de Vista de las Top 5 Marcas más Vendidas con Cantidad Vendida
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Top5MarcasVendidas
 
 
