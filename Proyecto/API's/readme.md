@@ -119,14 +119,14 @@ Crear los siguientes archivos:
          "Nombre": "Guess",
          "Descripcion": "Articulos de la marca Guess Originales"
       } ')
-3. Actualizar datos de Inventario 1. 2.
+3. Actualizar datos de Inventario
     1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Inventario?idInventario=6 
     2. Debe colocar los datos con este formato, en 'Body', 'Raw', utilizando Postman (' {"idPrenda":8, "Cantidad": 300} ')
-4. Actualizar datos de Usuario 1. 2.
-    1.http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Usuario?idUsuario=5 
-    2. Debe colocar los datos con este formato, en 'Body', 'Raw', utilizando Postman (' { "Nombre": "Daniel", "Apellidos": "Meneses", "Rol": 1, "Email":         "daniel@gmail.com", "Telefono": "777-1244", "Direccion": "Calle 15 Paraiso", "Password": "224455" } ')
-5. Actualizar datos de Venta 1. 2.
-    1.http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Venta?idVenta=4
+4. Actualizar datos de Usuario
+    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Usuario?idUsuario=5 
+    2. Debe colocar los datos con este formato, en 'Body', 'Raw', utilizando Postman (' { "Nombre": "Daniel", "Apellidos": "Meneses",  "Rol": 1, "Email":         "daniel@gmail.com", "Telefono": "777-1244", "Direccion": "Calle 15 Paraiso", "Password": "224455" } ')
+5. Actualizar datos de Venta
+    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Venta?idVenta=4
     2. Debe colocar los datos con este formato, en 'Body', 'Raw', utilizando Postman (' {"idUsuario": 4, "idPrenda": 6, "Cantidad": 2, "Fecha": "2024-08-06", "Descripcion": "Compra Sara Basic T-Shirt", "Total": 12600 } ')
 
 ##### Nota: *Para actualizar un registro coloque la URL seguido del signo '?', el nombre, y el 'ID' del elemento que desea actualizar junto a su numero, ejemplo URL/Prenda?idMarca=6*
@@ -138,12 +138,12 @@ Crear los siguientes archivos:
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Prenda?idPrenda=7 
 2. Eliminar datos de Marca
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Marca?idMarca=7
-3. Eliminar datos de Inventario 1.
-    1.http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Inventario?idInventario=6 
-4. Eliminar datos de Usuario 1.
+3. Eliminar datos de Inventario
+    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Inventario?idInventario=6 
+4. Eliminar datos de Usuario
     1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Usuario?idUsuario=5
-5. Eliminar datos de Venta 1.
-    1.http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Venta?idVenta=5
+5. Eliminar datos de Venta
+    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Venta?idVenta=5
 
 ##### Nota: *Para eliminar un registro coloque la URL seguido del signo '?', el nombre, y el 'ID' del elemento que desea eliminar junto a su numero, ejemplo URL/Prenda?idPrenda=7*
 
