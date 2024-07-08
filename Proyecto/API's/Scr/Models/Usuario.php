@@ -33,5 +33,34 @@ class Usuario
         $stmt->execute([$data['Nombre'], $data['Apellidos'], $data['Rol'], $data['Email'], $data['Telefono'], $data['Direccion'], $data['Password']]);
         return ['id' => $this->db->lastInsertId()];
     }
+
+
+    //UPDATE
+    public function update($id, $data)
+    {
+        $stmt = $this->db->prepare("UPDATE Usuario SET Nombre = ?, Apellidos = ?, Rol = ?, Email = ?, Telefono = ?, Direccion = ?, Password = ? WHERE idUsuario = ?");
+        $stmt->execute([$data['Nombre'], $data['Apellidos'], $data['Rol'], $data['Email'], $data['Telefono'], $data['Direccion'], $data['Password'], $id]);
+        return ['success' => true];
+    }
+
+
+    // DELETE
+    public function delete($id)
+    {
+        try {
+            // Actualiza el campo idUsuario a NULL en la tabla venta
+            $stmtVenta = $this->db->prepare("UPDATE venta SET idUsuario = NULL WHERE idUsuario = ?");
+            $stmtVenta->execute([$id]);
+
+            // Luego elimina el usuario
+            $stmtInventario = $this->db->prepare("DELETE FROM Usuario WHERE idUsuario = ?");
+            $stmtInventario->execute([$id]);
+
+            return ['Eliminado' => true];
+        } catch (Exception $e) {
+            echo $e->getMessage(); // Muestra el mensaje de error para depurar
+            return ['Error al Eliminar' => false];
+        }
+    }
 }
 ?>

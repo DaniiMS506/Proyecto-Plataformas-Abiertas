@@ -25,5 +25,29 @@ class Venta
         $stmt->execute([$data['idUsuario'], $data['idPrenda'], $data['Cantidad'], $data['Fecha'], $data['Descripcion'], $data['Total']]);
         return ['id' => $this->db->lastInsertId()];
     }
+
+
+    //UPDATE
+    public function update($id, $data)
+    {
+        $stmt = $this->db->prepare("UPDATE Venta SET idUsuario = ?, idPrenda = ?, Cantidad = ?, Fecha = ?, Descripcion = ?, Total = ? WHERE idVenta = ?");
+        $stmt->execute([$data['idUsuario'], $data['idPrenda'], $data['Cantidad'], $data['Fecha'], $data['Descripcion'], $data['Total'], $id]);
+        return ['success' => true];
+    }
+
+
+    // DELETE
+    public function delete($id)
+    {
+        try {
+            $stmtPrenda = $this->db->prepare("DELETE FROM Venta WHERE idVenta = ?");
+            $stmtPrenda->execute([$id]);
+
+            return ['Eliminado' => true];
+        } catch (Exception $e) {
+            echo $e->getMessage(); // Muestra el mensaje de error para depurar
+            return ['Error al Eliminar' => false];
+        }
+    }
 }
 ?>

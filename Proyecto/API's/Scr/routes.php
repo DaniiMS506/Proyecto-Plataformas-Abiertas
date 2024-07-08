@@ -126,6 +126,12 @@ elseif ($path  == "Inventario") {
         case 'POST':
             $objectosInventario->create();
             break;
+        case 'PUT':
+            $objectosInventario->update($id);
+            break;
+        case 'DELETE':
+            $objectosInventario->delete($id);
+            break;
         default:
             Response::json(['error' => 'Metodo no permitido'], 405);
     }
@@ -143,6 +149,12 @@ elseif ($path  == "Usuario") {
         case 'POST':
             $objectosUsuario->create();
             break;
+        case 'PUT':
+            $objectosUsuario->update($id);
+            break;
+        case 'DELETE':
+            $objectosUsuario->delete($id);
+            break;
         default:
             Response::json(['error' => 'Metodo no permitido'], 405);
     }
@@ -159,6 +171,12 @@ elseif ($path  == "Venta") {
             break;
         case 'POST':
             $objectosVenta->create();
+            break;
+        case 'PUT':
+            $objectosVenta->update($id);
+            break;
+        case 'DELETE':
+            $objectosVenta->delete($id);
             break;
         default:
             Response::json(['error' => 'Metodo no permitido'], 405);
