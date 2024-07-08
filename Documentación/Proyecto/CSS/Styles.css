@@ -1,0 +1,148 @@
+/*Font*/
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/*Variables*/
+:root {
+    --bg-color: #333;
+    --second-bg-color: #444;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: var(--bg-color);
+    color: white;
+    padding: 1.5rem;
+}
+
+.login-link {
+    color: white;
+    float: right;
+    margin-top: -2%;
+}
+
+.login-link:hover {
+    color: var(--main-color);
+}
+
+.navbar {
+    background-color: var(--second-bg-color);
+    padding: 0.7rem;
+    text-size-adjust: 95;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 7px;
+}
+
+.navbar ul li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    margin-bottom: 60px;
+    overflow: auto;
+}
+
+section {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    width: 30%;
+}
+
+section h2 {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+th {
+    background-color: #ddd;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/*Social Media Icons*/
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 30%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.social-media a:hover {
+    background: var(--main-color);
+    color: var(--second-bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+    /* x | y | blur | color */
+}
+
+/* Estilos responsive */
+@media screen and (max-width: 814px) {
+    /* Responsive NavBar */
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar li {
+        flex-grow: 0;
+        width: 100%;
+    }
+
+    .navbar a {
+        padding: 10px;
+    }
+}
