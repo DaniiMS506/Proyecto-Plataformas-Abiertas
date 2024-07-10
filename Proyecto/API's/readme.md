@@ -48,7 +48,7 @@ Crear los siguientes archivos:
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Venta
 
 
-##### Notas: *Para usar la busqueda por ID utilice solamente (Prenda, Inventario o Usuario) en la URL deberá colocar un signo de pregunta '?' seguido de (idPrenda, idInventario o idUsuario) respectivamente para cada caso, acompañado de un igual '=' junto al numero del ID que desea filtrar la busqueda, ejemplo: URL/Prenda?idPrenda=3*
+##### Nota: *Para usar la busqueda por ID utilice solamente (Prenda, Inventario o Usuario) en la URL deberá colocar un signo de pregunta '?' seguido de (idPrenda, idInventario o idUsuario) respectivamente para cada caso, acompañado de un igual '=' junto al numero del ID que desea filtrar la busqueda, ejemplo: URL/Prenda?idPrenda=3*
 
 ##
 
