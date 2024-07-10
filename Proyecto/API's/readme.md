@@ -21,9 +21,9 @@ Crear los siguientes archivos:
    1. API's\Public\Error\Response.html
    2. API's\Public\index.php
 2. **Src**
-   3. API's\Src\DB\conn.php
-   4. API's\Src\routes.php
-   5. API's\Src\Utils\Response.php
+   1. API's\Src\DB\conn.php
+   2. API's\Src\routes.php
+   3. API's\Src\Utils\Response.php
 
 ## 
 
