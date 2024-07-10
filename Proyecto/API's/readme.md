@@ -17,12 +17,15 @@
 ## Archivos
 
 Crear los siguientes archivos:
+1. **Public**
+   1. API's\Public\Error\Response.html
+   2. API's\Public\index.php
+2. **Src**
+   3. API's\Src\DB\conn.php
+   4. API's\Src\routes.php
+   5. API's\Src\Utils\Response.php
 
-1. API's\Public\Error\Response.html
-2. API's\Public\index.php
-3. API's\Src\DB\conn.php
-4. API's\Src\routes.php
-5. API's\Src\Utils\Response.php
+## 
 
 ## Utilización de los Endpoints.
 
@@ -44,6 +47,9 @@ Crear los siguientes archivos:
 5. Consulta Venta
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Venta
 
+
+##### Notas: *Para usar la busqueda por ID utilice solamente (Prenda, Inventario o Usuario) en la URL deberá colocar un signo de pregunta '?' seguido de (idPrenda, idInventario o idUsuario) respectivamente para cada caso, acompañado de un igual '=' junto al numero del ID que desea filtrar la busqueda, ejemplo: URL/Prenda?idPrenda=3*
+
 ##
 
 ### Endpoints Consultas VIEWS (*Vistas*)
@@ -57,7 +63,7 @@ Crear los siguientes archivos:
 ##
 
 ### Endpoints Insertar **POST** (*Insert / Create*)
-1. Insertar datos en Prenda **POST**
+1. Insertar datos en Prenda
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Prenda
    2. Debe colocar los datos con este formato, en 'Body', 'Raw', utilizando Postman (' {
          "Nombre": "Bolso Gucci",
@@ -67,19 +73,19 @@ Crear los siguientes archivos:
          "Imagen": "",
          "idMarca": 7
       } ')
-2. Insertar datos en Marca **POST**
+2. Insertar datos en Marca
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Marca 
    2. Debe colocar los datos con este formato, en 'Body', 'Raw', utilizando Postman (' {
          "Nombre": "Gucci",
          "Descripcion": "Ropa Gucci"
       } ')
-3. Insertar datos en Inventario **POST**
+3. Insertar datos en Inventario
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Inventario
    2. Debe colocar los datos con este formato, en 'Body', 'Raw', utilizando Postman (' {
          "idPrenda": 7,
          "Cantidad": 22
       } ')
-4. Insertar datos en Usuario **POST**
+4. Insertar datos en Usuario
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Usuario
    2. Debe colocar los datos con este formato, en 'Body', 'Raw', utilizando Postman (' {
          "Nombre": "Genesis",
@@ -90,7 +96,7 @@ Crear los siguientes archivos:
          "Direccion": "Calle 31 Cartago",
          "Password": "123"
       } ')
-5. Insertar datos en Venta **POST**
+5. Insertar datos en Venta
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Venta
    2. Debe colocar los datos con este formato, en 'Body', 'Raw', utilizando Postman (' {
          "idUsuario": 6,
@@ -104,7 +110,7 @@ Crear los siguientes archivos:
 ##
 
 ### Endpoints Actualizar **PUT** (*Update*)
-1. Actualizar datos de Prenda **PUT**
+1. Actualizar datos de Prenda
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Prenda?idPrenda=6
    2. Debe colocar los datos con este formato, en 'Body', 'Raw', utilizando Postman (' {
          "Nombre": "Zara Basic T-Shirt",
@@ -113,19 +119,19 @@ Crear los siguientes archivos:
          "Descripcion": "Camiseta básica de Zara.",
          "idMarca": 5
       } ')
-2. Actualizar datos de Marca **PUT**
+2. Actualizar datos de Marca
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Marca?idMarca=6
    2. Debe colocar los datos con este formato, en 'Body', 'Raw', utilizando Postman (' {
          "Nombre": "Guess",
          "Descripcion": "Articulos de la marca Guess Originales"
       } ')
-3. Actualizar datos de Inventario **PUT**
+3. Actualizar datos de Inventario
     1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Inventario?idInventario=6 
     2. Debe colocar los datos con este formato, en 'Body', 'Raw', utilizando Postman (' {"idPrenda":8, "Cantidad": 300} ')
-4. Actualizar datos de Usuario **PUT**
+4. Actualizar datos de Usuario
     1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Usuario?idUsuario=5 
     2. Debe colocar los datos con este formato, en 'Body', 'Raw', utilizando Postman (' { "Nombre": "Daniel", "Apellidos": "Meneses",  "Rol": 1, "Email":         "daniel@gmail.com", "Telefono": "777-1244", "Direccion": "Calle 15 Paraiso", "Password": "224455" } ')
-5. Actualizar datos de Venta **PUT**
+5. Actualizar datos de Venta
     1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Venta?idVenta=4
     2. Debe colocar los datos con este formato, en 'Body', 'Raw', utilizando Postman (' {"idUsuario": 4, "idPrenda": 6, "Cantidad": 2, "Fecha": "2024-08-06", "Descripcion": "Compra Sara Basic T-Shirt", "Total": 12600 } ')
 
@@ -134,22 +140,23 @@ Crear los siguientes archivos:
 ##
 
 ### Endpoints Eliminar **DELETE** (*Delete*)
-1. Eliminar datos de Prenda **DELETE**
+1. Eliminar datos de Prenda 
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Prenda?idPrenda=7 
-2. Eliminar datos de Marca **DELETE**
+2. Eliminar datos de Marca
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Marca?idMarca=7
-3. Eliminar datos de Inventario **DELETE**
+3. Eliminar datos de Inventario
     1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Inventario?idInventario=6 
-4. Eliminar datos de Usuario **DELETE**
+4. Eliminar datos de Usuario
     1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Usuario?idUsuario=5
-5. Eliminar datos de Venta **DELETE**
+5. Eliminar datos de Venta
     1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Venta?idVenta=5
 
 ##### Nota: *Para eliminar un registro coloque la URL seguido del signo '?', el nombre, y el 'ID' del elemento que desea eliminar junto a su numero, ejemplo URL/Prenda?idPrenda=7*
 
 ##
 
-#### Notas: *Para usar la busqueda por ID utilice solamente (Prenda, Inventario y Usuario) en la URL deberá colocar un signo de pregunta '?' seguido de (idPrenda, idInventario y idUsuario) respectivamente para cada caso, acompañado de un igual '=' junto al numero del ID que desea filtrar la busqueda, ejemplo: URL/Prenda?idPrenda=3*
+#### Nota: *Es importante contar con la estructura correspondiente para el funcionamiento correcto de las API's*
+##### *Deberá tener la estructura siguente: C:\xampp\htdocs\Proyecto Desarrollo con Plataformas Abiertas\Proyecto\API's*
 
 ##
 ###
