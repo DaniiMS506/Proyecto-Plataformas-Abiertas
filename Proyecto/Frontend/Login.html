@@ -20,13 +20,10 @@
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <!--Icons-->
     <script src="https://use.fontawesome.com/1cf4292344.js"></script>
-    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
     <!--sweetalert-->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <!--JS-->
-    <script src="JS/scriptLogin.js"></script>
     <!--Web Icon-->
-    <link rel='shortcut icon' type='image/png' href='IMG/web-icon.png' />
+    <link rel='shortcut icon' type='image/png' href='Frontend/IMG/web-icon.png' />
 </head>
 
 <body>
@@ -68,9 +65,25 @@
                     <h2> <span class="multiple-text2"> <!--Typed JS--> </span> </h2>
                     <input type="text" name="" id="NombreCompleto" placeholder="Nombre Completo">
                     <input type="text" name="" id="txtApellidos" placeholder="Apellidos">
-                    <input type="number" name="" id="txtCedula" placeholder="C&eacute;dula">
+                    <!-- Seleccion de ROL -->
+                    <div class="password-container">
+                        <input type="password" id="selTipoShow" placeholder="C&oacute;digo Administrador"
+                            oninput="mostrarOcultarSelect()">
+
+                        <input type="checkbox" id="showAdminCodeCheckbox">
+                        <abbr title="Mostrar/Ocultar C&oacute;digo Administrador"> <label for="showAdminCodeCheckbox"
+                                id="toggleCodeAdminPassword"><i class="fa fa-eye"></i></label> </abbr>
+                    </div>
+
+                    <select id="selTipo" style="width: 100%; margin-top: 10px; display: none;">
+                        <option selected value="1">Seleccione el Rol</option>
+                        <option value="1">Usuario</option>
+                        <option value="2">Administrador</option>
+                    </select>
 
                     <input type="text" name="" id="txtEmail" placeholder="Email" autocomplete="off">
+                    <input type="text" name="" id="txtPhone" placeholder="Telefono" autocomplete="off">
+
                     <!--Mostrar y Ocultar Password Registrarse-->
                     <div class="password-container">
                         <input type="password" name="" id="Contrasena" placeholder="Contrase&ntilde;a">
@@ -78,6 +91,7 @@
                         <abbr title="Mostrar/Ocultar Contrase&ntilde;a"> <label for="showRegisterPasswordCheckbox"
                                 id="togglePassword"><i class="fa fa-eye"></i></label> </abbr>
                     </div>
+
                     <!--Mostrar y Ocultar Password Confirmar-->
                     <div class="password-container">
                         <input type="password" name="" id="ConfirmaContrasena"
@@ -88,21 +102,6 @@
                                     class="fa fa-eye"></i></label> </abbr>
                     </div>
 
-                    <!-- Seleccion de ROL -->
-                    <div class="password-container">
-                        <input type="password" id="selTipoShow" placeholder="C&oacute;digo Administrador"
-                            oninput="mostrarOcultarSelect()">
-
-                            <input type="checkbox" id="showAdminCodeCheckbox">
-                        <abbr title="Mostrar/Ocultar C&oacute;digo Administrador"> <label
-                                for="showAdminCodeCheckbox" id="toggleCodeAdminPassword"><i
-                                    class="fa fa-eye"></i></label> </abbr>
-                    </div>
-
-                    <select id="selTipo" style="width: 100%; margin-top: 10px; display: none;">
-                        <option value="1">Usuario</option>
-                        <option value="2">Administrador</option>
-                    </select>
 
                     <button type="submit" id="btn_Registrarse" onclick="enviar_registro(event)"
                         style="margin-top: 15px;">Registrarse</button>
@@ -114,9 +113,9 @@
 
     <!--Typed JS/Text Animations-->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
     <!--JS-->
-    <script src="JS/AnimacionesLogin.js"></script>
+    <script src="../JS/scriptLogin.js"></script>
+    <script src="../JS/AnimacionesLogin.js"></script>
 </body>
 
 <script>
