@@ -2,7 +2,7 @@
 By, Kendal Daniel Muñoz Solano & Daniel Alonso Meneses Chavarria.
 
 ## Descripción.
-El proyecto consiste en el desarrollo de un sitio web de una tienda de ropa, con su respectiva base de datos.
+El proyecto consiste en el desarrollo de un sitio web de una tienda de ropa, con su respectiva base de datos y la utilización de API's.
 
 ## Tecnologías Implementadas
 
