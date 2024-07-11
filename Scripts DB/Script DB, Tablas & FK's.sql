@@ -15,7 +15,6 @@ CREATE TABLE Prenda (
     Cantidad INT NOT NULL,
     Precio DECIMAL(10, 2) NOT NULL,
     Descripcion VARCHAR(255),
-	Imagen LONGBLOB NOT NULL,
     idMarca INT NOT NULL,
     FOREIGN KEY (idMarca) REFERENCES Marca(idMarca)
 );

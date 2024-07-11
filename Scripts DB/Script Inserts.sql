@@ -7,13 +7,13 @@ INSERT INTO Marca (Nombre, Descripcion) VALUES
 ('Zara', 'Marca española de ropa y accesorios.');
 
 -- Inserciones para la tabla Prenda
-INSERT INTO Prenda (Nombre, Cantidad, Precio, Descripcion, Imagen, idMarca) VALUES 
-('Nike Air Jordan 1', 50, 90000.00, 'Zapatillas deportivas de baloncesto.', LOAD_FILE('C:/xampp/htdocs/Proyecto Desarrollo con Plataformas Abiertas/Proyecto/IMG/Prendas/NikeAirJordan1.jpg'), 1),
-('Nike Air Force 1', 60, 60000.00, 'Zapatillas clásicas de Nike.', LOAD_FILE('C:/xampp/htdocs/Proyecto Desarrollo con Plataformas Abiertas/Proyecto/IMG/Prendas/NikeAirForce1.jpg'), 1),
-('Adidas Ultraboost', 40, 108000.00, 'Zapatillas de running con máxima amortiguación.', LOAD_FILE('C:/xampp/htdocs/Proyecto Desarrollo con Plataformas Abiertas/Proyecto/IMG/Prendas/AdidasUltraboost.avif'), 2),
-('Puma Suede Classic', 30, 48000.00, 'Zapatillas icónicas de Puma.', LOAD_FILE('C:/xampp/htdocs/Proyecto Desarrollo con Plataformas Abiertas/Proyecto/IMG/Prendas/PumaSuedeClassic.jpg'), 3),
-('Levi\'s 501 Original Fit Jeans', 100, 36000.00, 'Jeans clásicos de Levi\'s.', LOAD_FILE('C:/xampp/htdocs/Proyecto Desarrollo con Plataformas Abiertas/Proyecto/IMG/Prendas/Levi\'s501OriginalFitJeans.jpg'), 4),
-('Zara Basic T-Shirt', 200, 12000.00, 'Camiseta básica de Zara.', LOAD_FILE('C:/xampp/htdocs/Proyecto Desarrollo con Plataformas Abiertas/Proyecto/IMG/Prendas/ZaraBasicT-Shirt.jpg'), 5);
+INSERT INTO Prenda (Nombre, Cantidad, Precio, Descripcion, idMarca) VALUES 
+('Nike Air Jordan 1', 50, 90000.00, 'Zapatillas deportivas de baloncesto.', 1),
+('Nike Air Force 1', 60, 60000.00, 'Zapatillas clásicas de Nike.' 1),
+('Adidas Ultraboost', 40, 108000.00, 'Zapatillas de running con máxima amortiguación.', 2),
+('Puma Suede Classic', 30, 48000.00, 'Zapatillas icónicas de Puma.', 3),
+('Levi\'s 501 Original Fit Jeans', 100, 36000.00, 'Jeans clásicos de Levi\'s.', 4),
+('Zara Basic T-Shirt', 200, 12000.00, 'Camiseta básica de Zara.', 5);
 
 -- Inserciones para la tabla Usuario
 INSERT INTO Usuario (Nombre, Apellidos, Rol, Email, Telefono, Direccion, Password) VALUES 
