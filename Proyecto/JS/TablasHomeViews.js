@@ -1,5 +1,7 @@
-// Obtener View Todas las Marcas con al menos 1 Venta
+// Vistas / Views
 document.addEventListener("DOMContentLoaded", function () {
+
+    // Obtener View Todas las Marcas con al menos 1 Venta
     fetch("http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/MarcaConVentas")
         .then(response => response.json())
         .then(data => {
@@ -11,11 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         })
         .catch(error => console.error('Error:', error));
-});
 
-
-// Obtener View Top 5 Marcas Vendidas 
-document.addEventListener("DOMContentLoaded", function () {
+    // Obtener View Top 5 Marcas Vendidas
     fetch("http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Top5MarcasVendidas")
         .then(response => response.json())
         .then(data => {
@@ -27,11 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         })
         .catch(error => console.error('Error:', error));
-});
 
-
-// Obtener View Prendas con Stock
-document.addEventListener("DOMContentLoaded", function () {
+    // Obtener View Prendas con Stock
     fetch("http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/PrendasConStock")
         .then(response => response.json())
         .then(data => {
@@ -43,4 +39,5 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         })
         .catch(error => console.error('Error:', error));
+
 });
