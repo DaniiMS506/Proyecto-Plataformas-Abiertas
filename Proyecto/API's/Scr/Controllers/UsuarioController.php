@@ -41,6 +41,11 @@ class UsuarioController
     {
         $data = json_decode(file_get_contents('php://input'), true);
         //var_dump($data);
+        if ($data === null) {
+            // Manejo de error si los datos no se decodifican correctamente
+            Response::json(['error' => 'Datos no validos recibidos'], 400);
+            return;
+        }
         echo  json_encode($this->model->create($data));
     }
 
@@ -53,7 +58,7 @@ class UsuarioController
         echo json_encode($this->model->update($id, $data));
     }
 
-    
+
     //DELETE
     public function delete($id)
     {

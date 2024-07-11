@@ -23,7 +23,7 @@
     <!--sweetalert-->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!--Web Icon-->
-    <link rel='shortcut icon' type='image/png' href='Frontend/IMG/web-icon.png' />
+    <link rel='shortcut icon' type='image/png' href='IMG/web-icon.png' />
 </head>
 
 <body>
@@ -63,26 +63,27 @@
                 <!--Registro-->
                 <form action="" class="formulario_registro" style="padding: 45px 20px;">
                     <h2> <span class="multiple-text2"> <!--Typed JS--> </span> </h2>
-                    <input type="text" name="" id="NombreCompleto" placeholder="Nombre Completo">
-                    <input type="text" name="" id="txtApellidos" placeholder="Apellidos">
-                    <!-- Seleccion de ROL -->
+                    <input type="text" name="" id="txtNombreCompleto" placeholder="Nombre Completo" autocomplete="on">
+                    <input type="text" name="" id="txtApellidos" placeholder="Apellidos" autocomplete="on">
+                    <!-- Seleccion de ROL CODIGO -->
                     <div class="password-container">
-                        <input type="password" id="selTipoShow" placeholder="C&oacute;digo Administrador"
+                        <input type="password" id="selRolShow" placeholder="C&oacute;digo Administrador"
                             oninput="mostrarOcultarSelect()">
 
                         <input type="checkbox" id="showAdminCodeCheckbox">
                         <abbr title="Mostrar/Ocultar C&oacute;digo Administrador"> <label for="showAdminCodeCheckbox"
                                 id="toggleCodeAdminPassword"><i class="fa fa-eye"></i></label> </abbr>
                     </div>
-
-                    <select id="selTipo" style="width: 100%; margin-top: 10px; display: none;">
+                    <!-- Seleccion de ROL -->
+                    <select id="selRol" style="width: 100%; margin-top: 10px; display: none;">
                         <option selected value="1">Seleccione el Rol</option>
                         <option value="1">Usuario</option>
                         <option value="2">Administrador</option>
                     </select>
 
-                    <input type="text" name="" id="txtEmail" placeholder="Email" autocomplete="off">
-                    <input type="text" name="" id="txtPhone" placeholder="Telefono" autocomplete="off">
+                    <input type="text" name="" id="txtPhone" placeholder="Telefono" autocomplete="on">
+                    <input type="text" name="" id="txtDireccion" placeholder="Direccion" autocomplete="on">
+                    <input type="text" name="" id="txtEmail" placeholder="Email" autocomplete="on">
 
                     <!--Mostrar y Ocultar Password Registrarse-->
                     <div class="password-container">
@@ -103,8 +104,7 @@
                     </div>
 
 
-                    <button type="submit" id="btn_Registrarse" onclick="enviar_registro(event)"
-                        style="margin-top: 15px;">Registrarse</button>
+                    <button type="submit" id="btn_Registrarse" style="margin-top: 15px;">Registrarse</button>
                 </form>
             </div>
 
@@ -120,18 +120,21 @@
 
 <script>
     function mostrarOcultarSelect() {
-        var codigoAdministrador = document.getElementById('selTipoShow').value;
-        var selectElement = document.getElementById('selTipo');
+        var codigoAdministrador = document.getElementById('selRolShow').value;
+        var selectElement = document.getElementById('selRol');
 
         // Verifica si el código ingresado es igual a "admin"
         if (codigoAdministrador.toLowerCase() === 'admin') {
             // Si es igual, muestra el select
             selectElement.style.display = 'block';
+            selectElement.value = '2'; // Administrador
         } else {
             // De lo contrario, oculta el select
             selectElement.style.display = 'none';
+            selectElement.value = '1'; // Usuario
         }
     }
+
 
 </script>
 

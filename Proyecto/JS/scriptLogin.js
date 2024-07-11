@@ -1,4 +1,4 @@
-//Funcion Entrar/Login
+// //Funcion Entrar / Login
 $(document).ready(function () {
     $('#btn_Entrar').click(function (e) {
         e.preventDefault();
@@ -29,7 +29,7 @@ $(document).ready(function () {
 
         //Peticiones tipo ajax ************
         $.ajax({
-            url: '/Proyecto/Logica-PHP/ValidarLogin.php',
+            url: '../Frontend/PHP/ValidarLogin.php',
             method: 'POST',
             data: {
                 logemail: logemail,
@@ -44,12 +44,12 @@ $(document).ready(function () {
                     if (dataresponse == 'Comprobando...') {
                         swal("Validando Admin...", dataresponse, "success");
                         setTimeout(function () {
-                            window.location.href = "homeAdmin.php"; //ADMIN
+                            window.location.href = "index.html"; //ADMIN
                         }, 1200);
                     } else {
                         swal("Validando...", dataresponse, "success");
                         setTimeout(function () {
-                            window.location.href = "home.php"; //USUARIO
+                            window.location.href = "index.html"; //USUARIO
                         }, 1200);
                     }
 
@@ -61,8 +61,7 @@ $(document).ready(function () {
                 console.log(errortext);
             }
         });
-
-    });//end btn
+    });//end btn 
 });//end
 
 //////////////////////////////////////////////////////////////////////////////
@@ -72,42 +71,58 @@ $(document).ready(function () {
     $('#btn_Registrarse').click(function (e) {
         e.preventDefault();
         //Variables 
-        let nombre = $('#NombreCompleto').val();
-        let apellidos = $('#txtApellidos').val();
-        let txtCedula = $('#txtCedula').val();
-
-        let Email = $('#txtEmail').val();
+        let txtnombre = $('#txtNombreCompleto').val();
+        let txtapellidos = $('#txtApellidos').val();
+        let rol_fk = $('#selRol').val();
+        let txtEmail = $('#txtEmail').val();
+        let txtPhoneNum = $('#txtPhone').val();
+        let txtDireccion = $('#txtDireccion').val();
         let contrasena = $('#Contrasena').val();
         let Confirmacontrasena = $('#ConfirmaContrasena').val();
-        let rol_fk = $('#selTipo').val();
 
+        // Formatos
         emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i; //validar formato email
         const pattern = new RegExp('^[A-ZÁÉÍÓÚÑ ]+$', 'i'); //contante para validar solo letras
 
         //VALIDACIONES
         //Nombre
-        if (nombre == "") {
+        if (txtnombre == "") {
             swal("Alerta!", "Debes ingresar el Nombre!", "warning");
             return false;
         }
-        if (!pattern.test(nombre)) {  //Valida SOLO LETRAS
+        if (!pattern.test(txtnombre)) {  //Valida SOLO LETRAS
             swal("Alerta!", "El nombre debe contener unicamente letras", "warning");
             return false;
         }
-        //Email
-        if (Email == "") {
-            swal("Alerta!", "Debes ingresar el Email!", "warning");
-            return false;
-        }
-        if (!emailRegex.test(Email)) { //Valida FORMATO EMAIL
-            swal("Alerta!", "El formato del correo electronico es incorrecto", "warning");
-            return false;
-        }
+
         //Apellidos
-        if (apellidos == "") {
+        if (txtapellidos == "") {
             swal("Alerta!", "Debe ingresar las apellidos!", "warning");
             return false;
         }
+
+        //Telefono
+        if (txtPhoneNum == "") {
+            swal("Alerta!", "Debe ingresar el numero de telefono!", "warning");
+            return false;
+        }
+
+        //Direccion
+        if (txtDireccion == "") {
+            swal("Alerta!", "Debe ingresar la direccion!", "warning");
+            return false;
+        }
+
+        //Email
+        if (txtEmail == "") {
+            swal("Alerta!", "Debes ingresar el Email!", "warning");
+            return false;
+        }
+        if (!emailRegex.test(txtEmail)) { //Valida FORMATO EMAIL
+            swal("Alerta!", "El formato del correo electronico es incorrecto", "warning");
+            return false;
+        }
+
         //Password
         if (contrasena == "") {
             swal("Alerta!", "Debes ingresar la contraseña!", "warning");
@@ -122,30 +137,29 @@ $(document).ready(function () {
             return false;
         }
 
+
         //Peticiones tipo ajax
         $.ajax({
-            url: '/Proyecto/Logica-PHP/Inserts/insertVendedor.php',
+            url: 'http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API%27s/Public/index.php/Usuario', // URL de tu endpoint
             method: 'POST',
-            data: {
-                //envio de datos
-
-                //DB vendedor
-                nombre: nombre,
-                apellidos: apellidos,
-                cedula: txtCedula,
-
-                //DB datos_vendedor
-                Email: Email,
-                contrasena: contrasena,
-                rol_fk: rol_fk
+            contentType: 'application/json',
+            data: JSON.stringify({
+                Nombre: txtnombre,
+                Apellidos: txtapellidos,
+                Rol: rol_fk,
+                Email: txtEmail,
+                Telefono: txtPhoneNum,
+                Direccion: txtDireccion,
+                Password: contrasena
+            }),
+            success: function (response) {
+                // Manejar la respuesta exitosa
+                swal("Registrado!", 'Bienvenido', "success");
             },
-            success: function (dataresponse, statustext, response) {  //captura repuesta del jquery
-                swal("Registrado!", dataresponse, "success");
-            },
-            error: function (request, errorcode, errortext) { //si no se logra hacer la peticion se captura el error
-                swal("Alerta!", request, "warning");
-                console.log(errorcode);
-                console.log(errortext);
+            error: function (xhr, status, error) {
+                // Manejar errores
+                swal("Error!", "Hubo un error al registrar. Por favor, inténtalo de nuevo más tarde.", "error");
+                console.error(xhr.responseText);
             }
         });
 
@@ -191,7 +205,7 @@ $(document).ready(function () {
 
     //Codigo Admin 
     $('#showAdminCodeCheckbox').change(function () {
-        togglePasswordVisibilityAdminCode('#selTipoShow', '#toggleCodeAdminPassword');
+        togglePasswordVisibilityAdminCode('#selRolShow', '#toggleCodeAdminPassword');
     });
 
     //password
