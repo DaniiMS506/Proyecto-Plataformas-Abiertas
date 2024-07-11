@@ -19,7 +19,7 @@ class Prenda
     // Function Consulta por ID !Imagen por formato
     public function find($id)
     {
-        $stmt = $this->db->prepare("SELECT idPrenda, Nombre, Cantidad, Precio, Descripcion, idMarca FROM prenda WHERE idPrenda = ?");
+        $stmt = $this->db->prepare("SELECT * FROM prenda WHERE idPrenda = ?");
         $stmt->execute([$id]);
         return $stmt->fetch();
     }
@@ -36,8 +36,8 @@ class Prenda
     // CREATE INSERT
     public function create($data)
     {
-        $stmt = $this->db->prepare("INSERT INTO prenda (Nombre, Cantidad, Precio, Descripcion, Imagen, idMarca) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$data['Nombre'], $data['Cantidad'], $data['Precio'], $data['Descripcion'], $data['Imagen'], $data['idMarca']]);
+        $stmt = $this->db->prepare("INSERT INTO prenda (Nombre, Cantidad, Precio, Descripcion, idMarca) VALUES (?, ?, ?, ?, ?)");
+        $stmt->execute([$data['Nombre'], $data['Cantidad'], $data['Precio'], $data['Descripcion'], $data['idMarca']]);
         return ['id' => $this->db->lastInsertId()];
     }
 

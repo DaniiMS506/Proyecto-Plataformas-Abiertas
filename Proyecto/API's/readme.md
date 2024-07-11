@@ -70,7 +70,6 @@ Crear los siguientes archivos:
          "Cantidad": 22,
          "Precio": 668,
          "Descripcion": "Bolso Gucci Pequeño",
-         "Imagen": "",
          "idMarca": 7
       } ')
 2. Insertar datos en Marca
