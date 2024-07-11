@@ -1,26 +1,38 @@
+<?php
+session_start();
+
+// Verificar si no existe el idUsuario en la sesión
+if (!isset($_SESSION['idUsuario'])) {
+    // Redirigir a la página de inicio de sesión
+    echo '<script> 
+            alert("Debe iniciar sesión y/o Registrarse Admin");
+            window.location.href = "../Login.html";
+        </script>';
+    exit(); // Asegura que el script se detenga después de redirigir
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>Home Administrador</title>
 
     <!--Web Icon-->
-    <link rel='shortcut icon' type='image/png' href='IMG/web-icon.png' />
+    <link rel='shortcut icon' type='image/png' href='../IMG/web-icon.png' />
     <!--CSS-->
-    <link rel="stylesheet" href="CSS/StyleHome.css">
-    <link rel="stylesheet" href="CSS/scrollBar.css">
+    <link rel="stylesheet" href="../CSS/scrollBar.css">
+    <link rel="stylesheet" href="../CSS/StyleHome.css">
 
     <!--LINKS-->
     <!--Icons-->
     <script src="https://use.fontawesome.com/1cf4292344.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <!-- Cards Style -->
     <style>
@@ -57,13 +69,19 @@
 
 <body>
     <header class="header">
-        <h1>Plataformas Abiertas</h1>
+        <h1>Vistas - Administrador</h1>
     </header>
 
     <nav class="navbar">
         <ul>
-            <li><a href="#" class="active fa fa-home"> Inicio</a></li>
-            <li><a href="Login.html" class="fa fa-sign-out"> Login</a></li>
+            <li><a href="../Pages/AdminHome.php" class="active fa fa-home"> Inicio</a></li>
+            <li><a href="PagesAdmin/ProductosAdmin.php" class="bx bxs-t-shirt"> Administrar Prendas</a></li>
+            <li><a href="PagesAdmin/ProductosAdmin.php" class="bx bxl-medium"> Administrar Marcas</a></li>
+            <li><a href="PagesAdmin/ProductosAdmin.php" class="fa fa-dropbox"> Administrar Inventario</a></li>
+            <li><a href="Pages/NuevoCliente.php" class="fa fa-address-card"> Administrar Usuarios</a></li>
+            <li><a href="../Pages/ADMIN Pages/VentasAdmin.php" class="fa fa-usd"> Administrar Ventas</a></li>
+            <li><a href="../PHP/logout.php" class="fa fa-sign-out"> Logout</a></li>
+
             <div class="animation start-home"></div>
         </ul>
     </nav>
@@ -130,7 +148,8 @@
         </div>
     </footer>
 
-    <script src="../JS/TablasHomeViews.js"></script>
+    <!-- JS -->
+    <script src="../../JS/TablasHomeViews.js"></script>
 </body>
 
 </html>

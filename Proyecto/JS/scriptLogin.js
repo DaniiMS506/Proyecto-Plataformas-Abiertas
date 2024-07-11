@@ -44,12 +44,12 @@ $(document).ready(function () {
                     if (dataresponse == 'Comprobando...') {
                         swal("Validando Admin...", dataresponse, "success");
                         setTimeout(function () {
-                            window.location.href = "index.html"; //ADMIN
+                            window.location.href = "../Frontend/Pages/AdminHome.php"; //ADMIN
                         }, 1200);
                     } else {
                         swal("Validando...", dataresponse, "success");
                         setTimeout(function () {
-                            window.location.href = "index.html"; //USUARIO
+                            window.location.href = "../Frontend/Pages/home.php"; //USUARIO
                         }, 1200);
                     }
 
