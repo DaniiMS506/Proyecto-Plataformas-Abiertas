@@ -18,6 +18,8 @@ El proyecto consiste en el desarrollo de un sitio web de una tienda de ropa, con
   <img src="https://skillicons.dev/icons?i=php" height="45" alt="php logo"  />
   <img width="14" />
   <img src="https://cdn.simpleicons.org/mysql/4479A1" height="45" alt="mysql logo"  />
+  <img width="14" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original-wordmark.svg" height="45" alt="fastapi logo"  />
 </div>
 
 
