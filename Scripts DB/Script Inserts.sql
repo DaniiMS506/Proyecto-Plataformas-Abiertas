@@ -9,7 +9,7 @@ INSERT INTO Marca (Nombre, Descripcion) VALUES
 -- Inserciones para la tabla Prenda
 INSERT INTO Prenda (Nombre, Cantidad, Precio, Descripcion, idMarca) VALUES 
 ('Nike Air Jordan 1', 50, 90000.00, 'Zapatillas deportivas de baloncesto.', 1),
-('Nike Air Force 1', 60, 60000.00, 'Zapatillas clásicas de Nike.' 1),
+('Nike Air Force 1', 60, 60000.00, 'Zapatillas clásicas de Nike.', 1),
 ('Adidas Ultraboost', 40, 108000.00, 'Zapatillas de running con máxima amortiguación.', 2),
 ('Puma Suede Classic', 30, 48000.00, 'Zapatillas icónicas de Puma.', 3),
 ('Levi\'s 501 Original Fit Jeans', 100, 36000.00, 'Jeans clásicos de Levi\'s.', 4),
