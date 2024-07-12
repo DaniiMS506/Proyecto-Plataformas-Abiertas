@@ -49,5 +49,39 @@ class Venta
             return ['Error al Eliminar' => false];
         }
     }
+
+    //////////////////////////
+
+    // Obtener Usuario: Nombre, Apellidos y ID
+    public function getUsuarios()
+    {
+        $stmt = $this->db->query("SELECT idUsuario, Nombre, Apellidos FROM Usuario");
+        return $stmt->fetchAll();
+    }
+
+    // Obtener Prenda: ID y Nombre
+    public function getPrendas()
+    {
+        $stmt = $this->db->query("SELECT idPrenda, nombre, precio FROM prenda");
+        return $stmt->fetchAll();
+    }
+
+    // Obtener Stock Inventario: Cantidad
+    public function getStock($idPrenda)
+    {
+        $stmt = $this->db->prepare("SELECT Cantidad FROM inventario WHERE idPrenda = ?");
+        $stmt->execute([$idPrenda]);
+        return $stmt->fetch();
+    }
+
+    ////////////////////////
+
+    // Actualizar Stock despues de Compras
+    public function updateStock($idPrenda, $cantidadVendida)
+    {
+        // Restar la cantidad vendida del stock actual en la tabla inventario
+        $stmt = $this->db->prepare("UPDATE inventario SET Cantidad = Cantidad - ? WHERE idPrenda = ?");
+        $stmt->execute([$cantidadVendida, $idPrenda]);
+    }
 }
 ?>

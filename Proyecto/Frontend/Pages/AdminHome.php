@@ -79,7 +79,7 @@ if (!isset($_SESSION['idUsuario'])) {
             <li><a href="PagesAdmin/ProductosAdmin.php" class="bx bxl-medium"> Administrar Marcas</a></li>
             <li><a href="PagesAdmin/ProductosAdmin.php" class="fa fa-dropbox"> Administrar Inventario</a></li>
             <li><a href="Pages/NuevoCliente.php" class="fa fa-address-card"> Administrar Usuarios</a></li>
-            <li><a href="../Pages/ADMIN Pages/VentasAdmin.php" class="fa fa-usd"> Administrar Ventas</a></li>
+            <li><a href="../Pages/Admin Pages/VentasAdmin.php" class="fa fa-usd"> Administrar Ventas</a></li>
             <li><a href="../PHP/logout.php" class="fa fa-sign-out"> Logout</a></li>
 
             <div class="animation start-home"></div>

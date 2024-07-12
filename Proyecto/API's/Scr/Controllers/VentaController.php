@@ -27,6 +27,11 @@ class VentaController
     {
         $data = json_decode(file_get_contents('php://input'), true);
         //var_dump($data);
+        $ventaId = $this->model->create($data); // Insertar la venta y obtener el ID
+
+        // Actualizar stock en inventario
+        $this->model->updateStock($data['idPrenda'], $data['Cantidad']);
+        echo json_encode(['id' => $ventaId]);
         echo  json_encode($this->model->create($data));
     }
 
@@ -45,6 +50,28 @@ class VentaController
     {
         $id = $_GET['idVenta']; // Obtiene el ID desde los parámetros de la consulta
         echo json_encode($this->model->delete($id));
+    }
+
+    ///////////////////////////
+
+    // Obtener Usuario: Nombre, Apellidos y ID
+    public function getUsuarios()
+    {
+        echo json_encode($this->model->getUsuarios());
+    }
+
+    // Obtener Prenda: ID y Nombre
+    public function getPrendas()
+    {
+        echo json_encode($this->model->getPrendas());
+    }
+
+    // Obtener Stock Inventario: Cantidad
+    public function getStock()
+    {
+        $idPrenda = $_GET['idPrenda'];
+        header('Content-Type: application/json');
+        echo json_encode($this->model->getStock($idPrenda));
     }
 }
 ?>

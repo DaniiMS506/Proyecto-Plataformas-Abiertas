@@ -25,10 +25,10 @@ $path = trim($_SERVER['PATH_INFO'], '/');
 $segmentosDeUrl = explode('/', $path);
 
 // Obtener el Primer Segmento como Ruta del Controlador
-$rutaControlador = array_shift($segmentosDeUrl );
+$rutaControlador = array_shift($segmentosDeUrl);
 
 // Obtener el Último Segmento como ID
-$id = end($segmentosDeUrl );
+$id = end($segmentosDeUrl);
 
 //Llamado de API's ejm: 
 // http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Prenda
@@ -167,7 +167,16 @@ elseif ($path  == "Venta") {
 
     switch ($method) {
         case 'GET':
-            $objectosVenta->get();
+            //$objectosVenta->get();
+            if (isset($_GET['type']) && $_GET['type'] == 'usuarios') {
+                $objectosVenta->getUsuarios();
+            } elseif (isset($_GET['type']) && $_GET['type'] == 'prendas') {
+                $objectosVenta->getPrendas();
+            } elseif (isset($_GET['type']) && $_GET['type'] == 'stock') {
+                $objectosVenta->getStock();
+            } else {
+                $objectosVenta->get();
+            }
             break;
         case 'POST':
             $objectosVenta->create();

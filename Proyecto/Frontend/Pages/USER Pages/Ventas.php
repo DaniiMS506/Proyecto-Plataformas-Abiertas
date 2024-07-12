@@ -57,18 +57,17 @@
 
     <nav class="navbar">
         <ul>
-        <li><a href="../home.php" class="fa fa-home"> Inicio</a></li>
-            <li><a href="../Pages/USER Pages/Ventas.php" class="active fa fa-usd"> Venta</a></li>
+            <li><a href="../home.php" class="fa fa-home"> Inicio</a></li>
+            <li><a href="../Pages/User Pages/Ventas.php" class="active fa fa-usd"> Venta</a></li>
             <li><a href="PagesAdmin/ProductosAdmin.php" class="bx bxs-t-shirt"> Prendas</a></li>
             <li><a href="PagesAdmin/ProductosAdmin.php" class="bx bxl-medium"> Marcas</a></li>
             <li><a href="PagesAdmin/ProductosAdmin.php" class="fa fa-dropbox"> Inventario</a></li>
             <li><a href="Pages/ReporteVentas.php" class="fa fa-bar-chart"> Reporte de Ventas</a></li>
-            <li><a href="../PHP/logout.php" class="fa fa-sign-out"> Logout</a></li>
+            <li><a href="../../PHP/logout.php" class="fa fa-sign-out"> Logout</a></li>
             <div class="animation start-home"></div>
         </ul>
     </nav>
 
-    <!--  -->
     <main class="main">
         <!-- Registrar Producto -->
         <div class="container">
@@ -86,20 +85,42 @@
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <h2>Registro de Venta</h2>
+                                    <h2 style="margin-bottom: 10px;">Registro de Venta</h2>
+
+                                    <div>
+                                        <label for="selUsuario">Seleccione un Usuario:</label>
+                                        <select class="form-select" name="" id="selUsuario">
+                                            <option value="" selected>Seleccione Usuario</option>
+                                        </select>
+
+                                        <label for="selPrenda">Seleccione un Prenda:</label>
+                                        <select class="form-select" name="" id="selPrenda">
+                                            <option value="" selected>Seleccione la Prenda</option>
+                                        </select>
+                                    </div>
 
                                     <div class="row">
                                         <div class="col-md-4">
                                             <input class="form-control half-width" type="number" name="" id="txtStock" placeholder="Stock" readonly>
                                         </div>
                                         <div class="col-md-8">
-                                            <input class="form-control half-width" type="number" name="" id="txtUnd" placeholder="Unidades">
+                                            <input class="form-control half-width" type="number" name="" id="txtUnd" placeholder="Unidades / Cantidad Deseada">
                                         </div>
                                     </div>
 
-                                    <input class="form-control" type="text" name="" id="txtPrecio" placeholder="Precio ₡" readonly>
+                                    <label for="selPrenda">Descripcion:</label>
+                                    <input class="form-control" type="text" name="" id="txtDescripcion" placeholder="Descripcion">
 
-                                    <button type="submit" class="btn btn-dark" id="btn_RegistrarProd" style="margin-top: 15px;">Agregar</button>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <input class="form-control" type="date" name="" id="txtFecha" placeholder="Fecha">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input class="form-control" type="text" name="" id="txtPrecio" placeholder="Precio Total ₡" readonly>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-dark" id="btn_RegistrarVenta" style="margin-top: 15px;">Realizar Venta</button>
                                 </div>
                             </div>
                         </div>
@@ -110,5 +131,8 @@
     </main>
 
 </body>
+
+<!-- JS -->
+<script src="../../../JS/VentasUser.js"></script>
 
 </html>
