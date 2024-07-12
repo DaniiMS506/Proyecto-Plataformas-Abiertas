@@ -18,10 +18,11 @@ HAVING
 
 -- ii.
 CREATE VIEW PrendasConStock AS
-SELECT P.idPrenda, P.Nombre, P.Cantidad AS Stock_Restante, IFNULL(SUM(V.Cantidad), 0) AS Cantidad_Vendida
+SELECT P.idPrenda, P.Nombre, I.Cantidad AS Stock_Restante, IFNULL(SUM(V.Cantidad), 0) AS Cantidad_Vendida
 FROM Prenda P
+LEFT JOIN Inventario I ON P.idPrenda = I.idPrenda
 LEFT JOIN Venta V ON P.idPrenda = V.idPrenda
-GROUP BY P.idPrenda, P.Nombre, P.Cantidad;
+GROUP BY P.idPrenda, P.Nombre, I.Cantidad;
 
 -- iii. 
 CREATE VIEW Top5MarcasVendidas AS
