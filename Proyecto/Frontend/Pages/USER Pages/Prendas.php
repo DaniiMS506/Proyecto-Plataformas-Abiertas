@@ -61,7 +61,7 @@
             <li><a href="../home.php" class="fa fa-home"> Inicio</a></li>
             <li><a href="../User Pages/Ventas.php" class="fa fa-usd"> Venta</a></li>
             <li><a href="../Pages/User Pages/Prendas.php" class="active bx bxs-t-shirt"> Prendas</a></li>
-            <li><a href="PagesAdmin/ProductosAdmin.php" class="bx bxl-medium"> Marcas</a></li>
+            <li><a href="../User Pages/Marcas.php" class="bx bxl-medium"> Marcas</a></li>
             <li><a href="PagesAdmin/ProductosAdmin.php" class="fa fa-dropbox"> Inventario</a></li>
             <li><a href="../User Pages/ReporteVentas.php" class="fa fa-bar-chart"> Reporte de Ventas</a></li>
             <li><a href="../../PHP/logout.php" class="fa fa-sign-out"> Logout</a></li>
@@ -89,11 +89,11 @@
                                     <h2 style="margin-bottom: 10px;">Registrar Prenda</h2>
 
                                     <div>
-                                        <label for="selUsuario">Ingrese el Nombre:</label>
-                                        <input class="form-control" type="text" name="" id="txtNombre" placeholder="Nombre de la Prenda" autocomplete="off">
+                                        <label for="txtNombre">Ingrese el Nombre:</label>
+                                        <input class="form-control" type="text" name="" id="txtNombre" placeholder="Nombre de la Prenda" autocomplete="off" maxlength="30">
 
                                         <!-- Llenado del Select de forma dinamica -->
-                                        <label for="selPrenda">Seleccione una Marca:</label>
+                                        <label for="selMarca">Seleccione una Marca:</label>
                                         <select class="form-select" name="" id="selMarca">
                                             <option value="" selected>Seleccione la Marca</option>
                                         </select>
@@ -105,15 +105,15 @@
                                             <input class="form-control" type="text" name="" id="txtPrecio" placeholder="Precio Unidad ₡">
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="txtUnd">Ingrese la Cantidad:</label>
-                                            <input class="form-control half-width" type="number" name="" id="txtUnd" placeholder="Cantidad Ingresada en Bodega">
+                                            <label for="txtCantidad">Ingrese la Cantidad:</label>
+                                            <input class="form-control half-width" type="number" name="" id="txtCantidad" placeholder="Cantidad Ingresada en Bodega">
                                         </div>
                                     </div>
 
-                                    <label for="selPrenda">Descripcion:</label>
-                                    <input class="form-control" type="text" name="" id="txtDescripcion" placeholder="Descripcion">
+                                    <label for="txtDescripcion">Descripcion:</label>
+                                    <input class="form-control" type="text" name="" id="txtDescripcion" placeholder="Descripcion" maxlength="255">
 
-                                    <button type="submit" class="btn btn-dark" id="btn_RegistrarVenta" style="margin-top: 15px;">Registrar Prenda</button>
+                                    <button type="submit" class="btn btn-dark" id="btn_RegistrarPrenda" style="margin-top: 15px;">Registrar Prenda</button>
                                 </div>
                             </div>
                         </div>
