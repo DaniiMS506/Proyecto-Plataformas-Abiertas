@@ -1,3 +1,4 @@
+// Llenado del Select Marcas de forma dinamica
 $(document).ready(function () {
     // Cargar MARCAS
     $.ajax({

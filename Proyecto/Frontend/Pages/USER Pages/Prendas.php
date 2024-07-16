@@ -92,6 +92,7 @@
                                         <label for="selUsuario">Ingrese el Nombre:</label>
                                         <input class="form-control" type="text" name="" id="txtNombre" placeholder="Nombre de la Prenda" autocomplete="off">
 
+                                        <!-- Llenado del Select de forma dinamica -->
                                         <label for="selPrenda">Seleccione una Marca:</label>
                                         <select class="form-select" name="" id="selMarca">
                                             <option value="" selected>Seleccione la Marca</option>
