@@ -40,14 +40,14 @@
 
 <body>
     <header class="header">
-        <h1>ING SW II - Reporte de Ventas</h1>
+        <h1>Reporte de Ventas</h1>
     </header>
 
     <nav class="navbar">
         <ul>
             <li><a href="../home.php" class="fa fa-home"> Inicio</a></li>
             <li><a href="../User Pages/Ventas.php" class="fa fa-usd"> Venta</a></li>
-            <li><a href="PagesAdmin/ProductosAdmin.php" class="bx bxs-t-shirt"> Prendas</a></li>
+            <li><a href="../User Pages/Prendas.php" class="bx bxs-t-shirt"> Prendas</a></li>
             <li><a href="PagesAdmin/ProductosAdmin.php" class="bx bxl-medium"> Marcas</a></li>
             <li><a href="PagesAdmin/ProductosAdmin.php" class="fa fa-dropbox"> Inventario</a></li>
             <li><a href="../Pages/User Pages/ReporteVentas.php" class="active fa fa-bar-chart"> Reporte de Ventas</a></li>
