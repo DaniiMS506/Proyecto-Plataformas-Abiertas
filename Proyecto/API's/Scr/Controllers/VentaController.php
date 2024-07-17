@@ -23,7 +23,7 @@ class VentaController
 
 
     //CREATE INSERT
-    public function create()
+    /*public function create()
     {
         $data = json_decode(file_get_contents('php://input'), true);
         //var_dump($data);
@@ -33,7 +33,20 @@ class VentaController
         $this->model->updateStock($data['idPrenda'], $data['Cantidad']);
         echo json_encode(['id' => $ventaId]);
         echo  json_encode($this->model->create($data));
+    }*/
+    public function create()
+    {
+        $data = json_decode(file_get_contents('php://input'), true);
+        // Insertar la venta y obtener el ID
+        $ventaId = $this->model->create($data);
+
+        // Actualizar stock en inventario
+        $this->model->updateStock($data['idPrenda'], $data['Cantidad']);
+
+        // Retornar el ID de la venta creada en formato JSON
+        echo json_encode(['id' => $ventaId]);
     }
+
 
 
     // UPDATE

@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Realizar Ventas</title>
+    <title>Usuarios</title>
     <!--Web Icon-->
     <link rel='shortcut icon' type='image/png' href='../../IMG/web-icon.png' />
     <!--CSS-->
     <link rel="stylesheet" href="../../CSS/StyleHome.css">
     <link rel="stylesheet" href="../../CSS/StylesVentas.css">
     <link rel="stylesheet" href="../../CSS/scrollBar.css">
-    <link rel="stylesheet" href="../../CSS/RepVentasStyles.css">
 
     <!--LINKS-->
     <!--Icons-->
@@ -26,11 +25,7 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 
     <!--sweetalert-->
-    <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
-
-    <!-- JS -->
-    <script src="../../../JS Admin/VentasAdmin.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <style>
         .form-select {
@@ -52,31 +47,23 @@
         .full-width {
             width: 100%;
         }
-
-        @media screen and (max-width: 814px) {
-            .tabla {
-                overflow-x: scroll;
-                overflow-y: scroll;
-            }
-
-        }
     </style>
 </head>
 
 <body>
     <header class="header">
-        <h1>Administrar Ventas</h1>
+        <h1>Administrar Usuarios</h1>
     </header>
 
     <nav class="navbar">
         <ul>
             <li><a href="../AdminHome.php" class="fa fa-home"> Inicio</a></li>
-
+            
             <li><a href="../Admin Pages/PrendasAdmin.php" class="bx bxs-t-shirt"> Administrar Prendas</a></li>
             <li><a href="../Admin Pages/MarcasAdmin.php" class="bx bxl-medium"> Administrar Marcas</a></li>
             <li><a href="../Admin Pages/InventarioAdmin.php" class="fa fa-dropbox"> Administrar Inventario</a></li>
-            <li><a href="../Admin Pages/VentasAdmin.php" class="active fa fa-usd"> Administrar Ventas</a></li>
-            <li><a href="../Admin Pages/UsuariosAdmin.php" class="fa fa-address-card"> Administrar Usuarios</a></li>
+            <li><a href="../Admin Pages/VentasAdmin.php" class="fa fa-usd"> Administrar Ventas</a></li>
+            <li><a href="../Admin Pages/UsuarioAdmin.php" class="active fa fa-address-card"> Administrar Usuarios</a></li>
 
             <li><a href="../../PHP/logout.php" class="fa fa-sign-out"> Logout</a></li>
             <div class="animation start-home"></div>
@@ -149,41 +136,9 @@
         </div>
     </main>
 
-    <!-- Tabla Administrar -->
-    <h2 id="tituloProd">Tabla de Productos</h2>
-
-    <div id="ReporteVentas">
-        <div class="tabla">
-            <table class="table table-dark">
-                <thead>
-                    <tr class="table-active">
-                        <th>#</th>
-                        <th>Id Usuario</th>
-                        <th>Id Prenda</th>
-                        <th>Cantidad</th>
-                        <th>Fecha</th>
-                        <th>Descripción</th>
-                        <th>Total</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-
-                <tbody id="TablaRepVentas">
-                    <!-- Llenado dinámico mediante JS -->
-                </tbody>
-
-            </table>
-
-            <!-- Paginación dinámica -->
-            <nav>
-                <ul class="pagination" id="pagination">
-                    <!-- Llenado de Paginación dinámica -->
-                </ul>
-            </nav>
-
-        </div>
-    </div>
-
 </body>
+
+<!-- JS -->
+<script src="../../../JS Admin/UserAdmin.js"></script>
 
 </html>

@@ -75,11 +75,13 @@ if (!isset($_SESSION['idUsuario'])) {
     <nav class="navbar">
         <ul>
             <li><a href="../Pages/AdminHome.php" class="active fa fa-home"> Inicio</a></li>
-            <li><a href="PagesAdmin/ProductosAdmin.php" class="bx bxs-t-shirt"> Administrar Prendas</a></li>
-            <li><a href="PagesAdmin/ProductosAdmin.php" class="bx bxl-medium"> Administrar Marcas</a></li>
-            <li><a href="PagesAdmin/ProductosAdmin.php" class="fa fa-dropbox"> Administrar Inventario</a></li>
-            <li><a href="Pages/NuevoCliente.php" class="fa fa-address-card"> Administrar Usuarios</a></li>
+            
+            <li><a href="../Pages/Admin Pages/PrendasAdmin.php" class="bx bxs-t-shirt"> Administrar Prendas</a></li>
+            <li><a href="../Pages/Admin Pages/MarcasAdmin.php" class="bx bxl-medium"> Administrar Marcas</a></li>
+            <li><a href="../Pages/Admin Pages/InventarioAdmin.php" class="fa fa-dropbox"> Administrar Inventario</a></li>
             <li><a href="../Pages/Admin Pages/VentasAdmin.php" class="fa fa-usd"> Administrar Ventas</a></li>
+            <li><a href="../Pages/Admin Pages/UsuariosAdmin.php" class="fa fa-address-card"> Administrar Usuarios</a></li>
+
             <li><a href="../PHP/logout.php" class="fa fa-sign-out"> Logout</a></li>
 
             <div class="animation start-home"></div>
