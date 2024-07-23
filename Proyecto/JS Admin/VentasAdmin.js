@@ -135,8 +135,8 @@ $(document).ready(function () {
 
 
 /////////////////////////////////////////////////////////////////////////
-
-// INSERT VENTA
+/* INSERT */
+/////////////////////////////////////////////////////////////////////////
 
 $(document).ready(function () {
 
@@ -228,6 +228,7 @@ $(document).ready(function () {
 
         mostrarPagina(paginaActual);
     }
+
 
     //////
 
@@ -352,3 +353,45 @@ function eliminarVenta(idVenta) {
 /* UPDATE */
 /////////////////////////////////////////////////////////////////////////
 
+    //Se declara la variable editando en false, para que no se active el modo de edicion
+    var editando = false;
+    //Se ejecuta cuando se le da click al boton de editar, y se ejecuta la funcion
+    $(document).on('click', '.editar', function(event) {
+        event.preventDefault();
+        var idVenta = $(this).closest('tr').find('.idVenta').val();
+
+        cargarDatosParaEditar(idVenta);
+    });
+
+    //funcion encargada de traer los datos para poder editarlos
+    function cargarDatosParaEditar(idVenta) {
+        $.ajax({
+            url: `http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Venta`,
+            type: 'GET',
+            data: {
+                idVenta: idVenta
+            },
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);
+                if (data) {
+                    //$("#idVenta").val(idVenta);
+                    $("#selUsuario").val(data.idUsuario);
+                    $("#selPrenda").val(data.idPrenda);
+                    $("#txtStock").val(data.Cantidad);
+                    $("#txtUnd").val(data.Cantidad);
+                    $("#txtDescripcion").val(data.Descripcion);
+                    $("#txtFecha").val(data.Fecha);
+                    $("#txtPrecio").val(data.Total);
+
+                    $("#btn_Update").show(); //Se muestra el botón de editar después de cargar los datos
+                    //La variable editando paso a true, ya que el evento actualizar se esta ejecutando
+                    editando = true;
+                    //asignarEventoActualizar(); //Se asigna el evento click después de mostrar el botón
+                }
+            },
+            error: function() {
+                alert("Error al cargar los datos para editar");
+            }
+        })
+    }

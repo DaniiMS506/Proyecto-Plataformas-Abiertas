@@ -26,7 +26,8 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 
     <!--sweetalert-->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
 
     <style>
         .form-select {
@@ -116,6 +117,8 @@
                                     <input class="form-control" type="text" name="" id="txtDescripcion" placeholder="Descripcion" maxlength="255">
 
                                     <button type="submit" class="btn btn-dark" id="btn_RegistrarPrenda" style="margin-top: 15px;">Registrar Prenda</button>
+                                    <button type="submit" class="btn btn-dark" id="btn_Update" style="margin-top: 15px; margin-left: 5px; display: none;">Actualizar Campos</button>
+
                                 </div>
                             </div>
                         </div>
@@ -124,6 +127,40 @@
             </div>
         </div>
     </main>
+
+    <!-- Tabla Administrar -->
+    <h2 id="tituloProd">Tabla de Prendas</h2>
+
+    <div id="ReportePrendas">
+        <div class="tabla">
+            <table class="table table-dark">
+                <thead>
+                    <tr class="table-active">
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Cantida Ingresada</th>
+                        <th>Precio</th>
+                        <th>Descripción</th>
+                        <th>Id Marca</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody id="TablaRepPrendas">
+                    <!-- Llenado dinámico mediante JS -->
+                </tbody>
+
+            </table>
+
+            <!-- Paginación dinámica -->
+            <nav>
+                <ul class="pagination" id="pagination">
+                    <!-- Llenado de Paginación dinámica -->
+                </ul>
+            </nav>
+
+        </div>
+    </div>
 
 </body>
 

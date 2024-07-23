@@ -27,7 +27,7 @@
 
     <!--sweetalert-->
     <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+    <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
 
     <!-- JS -->
     <script src="../../../JS Admin/VentasAdmin.js"></script>
@@ -140,6 +140,8 @@
                                     </div>
 
                                     <button type="submit" class="btn btn-dark" id="btn_RegistrarVenta" style="margin-top: 15px;">Realizar Venta</button>
+                                    <button type="submit" class="btn btn-dark" id="btn_Update" style="margin-top: 15px; margin-left: 5px; display: none;">Actualizar Campos</button>
+
                                 </div>
                             </div>
                         </div>
@@ -150,7 +152,7 @@
     </main>
 
     <!-- Tabla Administrar -->
-    <h2 id="tituloProd">Tabla de Productos</h2>
+    <h2 id="tituloProd">Tabla de Ventas</h2>
 
     <div id="ReporteVentas">
         <div class="tabla">
