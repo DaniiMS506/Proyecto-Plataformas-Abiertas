@@ -182,7 +182,7 @@ $(document).ready(function () {
 
     // Función para inicializar la paginación
     function inicializarPaginacion(ventas) {
-        const registrosPorPagina = 12;
+        const registrosPorPagina = 7;
         let paginaActual = 1;
 
         function mostrarPagina(pagina) {
@@ -304,45 +304,45 @@ function eliminarVenta(idVenta) {
         closeOnConfirm: false,
         closeOnCancel: true
     },
-    function(isConfirm){
-        if (isConfirm) {
-            // URL del endpoint para eliminar venta
-            const url = `http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Venta?idVenta=${idVenta}`;
+        function (isConfirm) {
+            if (isConfirm) {
+                // URL del endpoint para eliminar venta
+                const url = `http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Venta?idVenta=${idVenta}`;
 
-            // Configuración de la solicitud AJAX
-            const options = {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            };
-
-            // Realizar la solicitud DELETE mediante fetch
-            fetch(url, options)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`Error al eliminar ${idVenta}: ${response.status} - ${response.statusText}`);
+                // Configuración de la solicitud AJAX
+                const options = {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
                     }
-                    return response.json(); // Intentar parsear la respuesta como JSON
-                })
-                .then(data => {
-                    // Manejar la respuesta
-                    swal("¡Eliminado!", "La venta ha sido eliminada correctamente.", "success");
-                    console.log('Venta eliminada:', data);
-                    // Refrescar la página después de 2 segundos
-                    setTimeout(() => {
-                        window.location.reload();
-                    }, 2000);
-                })
-                .catch(error => {
-                    console.error('Error al eliminar la venta:', error.message);
-                    swal("Error", `No se pudo eliminar la venta ${idVenta}`, "error");
-                });
+                };
 
-        } else {
-            swal("Cancelado", `La venta ${idVenta} no ha sido eliminada.`, "error");
-        }
-    });
+                // Realizar la solicitud DELETE mediante fetch
+                fetch(url, options)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Error al eliminar ${idVenta}: ${response.status} - ${response.statusText}`);
+                        }
+                        return response.json(); // Intentar parsear la respuesta como JSON
+                    })
+                    .then(data => {
+                        // Manejar la respuesta
+                        swal("¡Eliminado!", "La venta ha sido eliminada correctamente.", "success");
+                        console.log('Venta eliminada:', data);
+                        // Refrescar la página después de 2 segundos
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 2000);
+                    })
+                    .catch(error => {
+                        console.error('Error al eliminar la venta:', error.message);
+                        swal("Error", `No se pudo eliminar la venta ${idVenta}`, "error");
+                    });
+
+            } else {
+                swal("Cancelado", `La venta ${idVenta} no ha sido eliminada.`, "error");
+            }
+        });
 }
 
 
@@ -353,45 +353,45 @@ function eliminarVenta(idVenta) {
 /* UPDATE */
 /////////////////////////////////////////////////////////////////////////
 
-    //Se declara la variable editando en false, para que no se active el modo de edicion
-    var editando = false;
-    //Se ejecuta cuando se le da click al boton de editar, y se ejecuta la funcion
-    $(document).on('click', '.editar', function(event) {
-        event.preventDefault();
-        var idVenta = $(this).closest('tr').find('.idVenta').val();
+//Se declara la variable editando en false, para que no se active el modo de edicion
+var editando = false;
+//Se ejecuta cuando se le da click al boton de editar, y se ejecuta la funcion
+$(document).on('click', '.editar', function (event) {
+    event.preventDefault();
+    var idVenta = $(this).closest('tr').find('.idVenta').val();
 
-        cargarDatosParaEditar(idVenta);
-    });
+    cargarDatosParaEditar(idVenta);
+});
 
-    //funcion encargada de traer los datos para poder editarlos
-    function cargarDatosParaEditar(idVenta) {
-        $.ajax({
-            url: `http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Venta`,
-            type: 'GET',
-            data: {
-                idVenta: idVenta
-            },
-            dataType: 'json',
-            success: function(data) {
-                console.log(data);
-                if (data) {
-                    //$("#idVenta").val(idVenta);
-                    $("#selUsuario").val(data.idUsuario);
-                    $("#selPrenda").val(data.idPrenda);
-                    $("#txtStock").val(data.Cantidad);
-                    $("#txtUnd").val(data.Cantidad);
-                    $("#txtDescripcion").val(data.Descripcion);
-                    $("#txtFecha").val(data.Fecha);
-                    $("#txtPrecio").val(data.Total);
+//funcion encargada de traer los datos para poder editarlos
+function cargarDatosParaEditar(idVenta) {
+    $.ajax({
+        url: `http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Venta`,
+        type: 'GET',
+        data: {
+            idVenta: idVenta
+        },
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+            if (data) {
+                //$("#idVenta").val(idVenta);
+                $("#selUsuario").val(data.idUsuario);
+                $("#selPrenda").val(data.idPrenda);
+                $("#txtStock").val(data.Cantidad);
+                $("#txtUnd").val(data.Cantidad);
+                $("#txtDescripcion").val(data.Descripcion);
+                $("#txtFecha").val(data.Fecha);
+                $("#txtPrecio").val(data.Total);
 
-                    $("#btn_Update").show(); //Se muestra el botón de editar después de cargar los datos
-                    //La variable editando paso a true, ya que el evento actualizar se esta ejecutando
-                    editando = true;
-                    //asignarEventoActualizar(); //Se asigna el evento click después de mostrar el botón
-                }
-            },
-            error: function() {
-                alert("Error al cargar los datos para editar");
+                $("#btn_Update").show(); //Se muestra el botón de editar después de cargar los datos
+                //La variable editando paso a true, ya que el evento actualizar se esta ejecutando
+                editando = true;
+                //asignarEventoActualizar(); //Se asigna el evento click después de mostrar el botón
             }
-        })
-    }
+        },
+        error: function () {
+            alert("Error al cargar los datos para editar");
+        }
+    })
+}

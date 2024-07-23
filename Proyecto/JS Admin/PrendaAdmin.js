@@ -77,7 +77,7 @@ $(document).ready(function () {
 
     // Función para inicializar la paginación
     function inicializarPaginacion(ventas) {
-        const registrosPorPagina = 12;
+        const registrosPorPagina = 7;
         let paginaActual = 1;
 
         function mostrarPagina(pagina) {
