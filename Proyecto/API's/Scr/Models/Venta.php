@@ -17,6 +17,14 @@ class Venta
         return $stmt->fetchAll();
     }
 
+    // Function Consulta por ID
+    public function find($id)
+    {
+        $stmt = $this->db->prepare("SELECT * FROM Venta WHERE idVenta = ?");
+        $stmt->execute([$id]);
+        return $stmt->fetch();
+    }
+
 
     //CREATE INSERT
     public function create($data)
@@ -84,4 +92,3 @@ class Venta
         $stmt->execute([$cantidadVendida, $idPrenda]);
     }
 }
-?>

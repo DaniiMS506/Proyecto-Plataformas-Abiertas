@@ -17,6 +17,14 @@ class Marca
         return $stmt->fetchAll();
     }
 
+    // Function Consulta por ID
+    public function find($id)
+    {
+        $stmt = $this->db->prepare("SELECT * FROM Marca WHERE idMarca = ?");
+        $stmt->execute([$id]);
+        return $stmt->fetch();
+    }
+
     // Método para obtener todas las marcas con ventas VIEW
     public function allWithSales()
     {
@@ -42,7 +50,8 @@ class Marca
 
 
     //UPDATE
-    public function update($id, $data) {
+    public function update($id, $data)
+    {
         $stmt = $this->db->prepare("UPDATE Marca SET Nombre = ?, Descripcion = ? WHERE idMarca = ?");
         $stmt->execute([$data['Nombre'], $data['Descripcion'], $id]);
         return ['success' => true];
@@ -52,7 +61,7 @@ class Marca
     // DELETE
     public function delete($id)
     {
-        try {           
+        try {
             $stmtPrenda = $this->db->prepare("DELETE FROM Marca WHERE idMarca = ?");
             $stmtPrenda->execute([$id]);
 
@@ -63,4 +72,3 @@ class Marca
         }
     }
 }
-?>

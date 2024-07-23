@@ -1,6 +1,6 @@
 <?php
 
-require_once (__DIR__ . '/../Models/Marca.php');
+require_once(__DIR__ . '/../Models/Marca.php');
 
 
 class MarcaController
@@ -18,7 +18,17 @@ class MarcaController
 
     public function get()
     {
-        echo json_encode($this->model->all());
+        // Obtener el idMarca de la URL si está presente
+        $idMarca = isset($_GET['idMarca']) ? $_GET['idMarca'] : null;
+
+        // Si se proporciona idMarca, filtrar por ese id
+        if ($idMarca !== null) {
+            $marca = $this->model->find($idMarca); // implementar este método en el model
+            echo json_encode($marca);
+        } else {
+            // Si no se proporciona idMarca, devolver todo el inventario
+            echo json_encode($this->model->all());
+        }
     }
 
     // Método para obtener todas las marcas con ventas VIEW
@@ -35,7 +45,8 @@ class MarcaController
 
 
     //CREATE INSERT
-    public function create(){
+    public function create()
+    {
         $data = json_decode(file_get_contents('php://input'), true);
         //var_dump($data);
         echo  json_encode($this->model->create($data));
@@ -43,7 +54,8 @@ class MarcaController
 
 
     // UPDATE
-    public function update($id){
+    public function update($id)
+    {
         $id = $_GET['idMarca'];
         $data = json_decode(file_get_contents('php://input'), true);
         echo json_encode($this->model->update($id, $data));
@@ -57,5 +69,3 @@ class MarcaController
         echo json_encode($this->model->delete($id));
     }
 }
-
-?>

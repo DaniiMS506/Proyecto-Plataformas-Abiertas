@@ -18,7 +18,17 @@ class VentaController
 
     public function get()
     {
-        echo json_encode($this->model->all());
+        // Obtener el idVenta de la URL si está presente
+        $idVenta = isset($_GET['idVenta']) ? $_GET['idVenta'] : null;
+
+        // Si se proporciona idInventario, filtrar por ese id
+        if ($idVenta !== null) {
+            $venta = $this->model->find($idVenta); // implementar este método en el model
+            echo json_encode($venta);
+        } else {
+            // Si no se proporciona idVenta, devolver todo el inventario
+            echo json_encode($this->model->all());
+        }
     }
 
 
@@ -76,4 +86,3 @@ class VentaController
         echo json_encode($this->model->getStock($idPrenda));
     }
 }
-?>

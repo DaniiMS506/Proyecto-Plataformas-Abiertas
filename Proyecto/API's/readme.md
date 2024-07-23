@@ -36,6 +36,8 @@ Crear los siguientes archivos:
          1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Prenda?idPrenda=1
 2. Consulta Marcas
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Marca
+   2. Consulta Marca por ID
+      1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Marca?idMarca=1
 3. Consulta Inventario
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Inventario
    2. Consulta Inventario por ID
@@ -46,6 +48,8 @@ Crear los siguientes archivos:
       1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Usuario?idUsuario=2
 5. Consulta Venta
    1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Venta
+   2. Consulta Venta por ID
+      1. http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Venta?idVenta=2
 
 
 ##### Nota: *Para usar la busqueda por ID utilice solamente (Prenda, Inventario o Usuario) en la URL deberá colocar un signo de pregunta '?' seguido de (idPrenda, idInventario o idUsuario) respectivamente para cada caso, acompañado de un igual '=' junto al numero del ID que desea filtrar la busqueda, ejemplo: URL/Prenda?idPrenda=3*
