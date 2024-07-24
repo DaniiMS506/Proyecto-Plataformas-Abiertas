@@ -365,33 +365,139 @@ $(document).on('click', '.editar', function (event) {
 
 //funcion encargada de traer los datos para poder editarlos
 function cargarDatosParaEditar(idVenta) {
-    $.ajax({
-        url: `http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Venta`,
-        type: 'GET',
-        data: {
-            idVenta: idVenta
-        },
-        dataType: 'json',
-        success: function (data) {
-            console.log(data);
-            if (data) {
-                //$("#idVenta").val(idVenta);
-                $("#selUsuario").val(data.idUsuario);
-                $("#selPrenda").val(data.idPrenda);
-                $("#txtStock").val(data.Cantidad);
-                $("#txtUnd").val(data.Cantidad);
-                $("#txtDescripcion").val(data.Descripcion);
-                $("#txtFecha").val(data.Fecha);
-                $("#txtPrecio").val(data.Total);
+    // Confirmar con SweetAlert antes de editar
+    swal({
+        title: "¿Desea Editar?",
+        text: `¿Estás seguro de Editar la Venta con ID ${idVenta}?`,
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Sí, Editar",
+        cancelButtonText: "Cancelar",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            // URL del endpoint para obtener los datos de la prenda
+            const url = `http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Venta?idVenta=${idVenta}`;
 
-                $("#btn_Update").show(); //Se muestra el botón de editar después de cargar los datos
-                //La variable editando paso a true, ya que el evento actualizar se esta ejecutando
-                editando = true;
-                //asignarEventoActualizar(); //Se asigna el evento click después de mostrar el botón
-            }
-        },
-        error: function () {
-            alert("Error al cargar los datos para editar");
+            // Configuración de la solicitud AJAX
+            const options = {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            };
+            // Realizar la solicitud GET mediante fetch
+            fetch(url, options)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Error al obtener datos de la venta ${idVenta}: ${response.status} - ${response.statusText}`);
+                    }
+                    return response.json(); // Intentar parsear la respuesta como JSON
+                })
+                .then(data => {
+                    //console.log(data); // Imprimir la respuesta para verificar
+                    if (data) {
+                        $("#selUsuario").val(data.idUsuario);
+                        $("#selPrenda").val(data.idPrenda);
+                        //$("#txtStock").val(data.Cantidad);
+                        $("#txtUnd").val(data.Cantidad);
+                        $("#txtDescripcion").val(data.Descripcion);
+                        $("#txtFecha").val(data.Fecha);
+                        $("#txtPrecio").val(data.Total);
+
+                        $("#btn_Update").show(); // Mostrar el botón de editar
+
+                        editando = true;
+                        asignarEventoActualizar(idVenta);
+
+                        // Enviar mensaje de éxito después de cargar los datos
+                        swal("¡Datos Cargados!", "Los datos han sido cargados para editar.", "success");
+                        // Obtener el stock de la prenda seleccionada
+                        const idPrenda = data.idPrenda;
+                        if (idPrenda) {
+                            $.ajax({
+                                url: 'http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API%27s/Public/index.php/Venta',
+                                method: 'GET',
+                                data: {
+                                    type: 'stock',
+                                    idPrenda: idPrenda
+                                },
+                                dataType: 'json', // Especificamos que esperamos JSON como respuesta
+                                success: function (data) {
+                                    try {
+                                        if (data.error) {
+                                            console.error("Error al obtener stock:", data.error);
+                                            $('#txtStock').val('');
+                                        } else {
+                                            $('#txtStock').val(data.Cantidad);
+                                        }
+                                    } catch (e) {
+                                        console.error("Error al parsear stock:", e);
+                                    }
+                                },
+                                error: function (error) {
+                                    console.error("Error al cargar stock:", error);
+                                }
+                            });
+                        } else {
+                            $('#txtStock').val('');
+                        }
+
+
+                    }
+                })
+                .catch(error => {
+                    console.error('Error al cargar los datos de la venta:', error.message);
+                    swal("Error", "Error al cargar los datos para editar", "error");
+                });
+        } else {
+            swal("Cancelado", `La edición de la prenda ${idVenta} ha sido cancelada.`, "error");
         }
-    })
+    });
+}
+
+
+//Funcion encargada de ejecutar el evento actualizar
+function asignarEventoActualizar(idVenta) {
+    //Se ejecuta cuando se le da click al boton de editar
+    $("#btn_Update").click(function (event) {
+        event.preventDefault();
+        if (editando) {
+            // Datos a enviar
+            const ventaData = {
+                idUsuario: $('#selUsuario').val(),
+                idPrenda: $('#selPrenda').val(),
+                Cantidad: parseInt($('#txtUnd').val()),
+                Fecha: $('#txtFecha').val(),
+                Descripcion: $('#txtDescripcion').val(),
+                Total: parseFloat($('#txtPrecio').val())
+            };
+
+            $.ajax({
+                type: "PUT",
+                url: `http://localhost/Proyecto%20Desarrollo%20con%20Plataformas%20Abiertas/Proyecto/API's/Public/index.php/Venta?idVenta=${idVenta}`,
+                contentType: 'application/json',
+                data: JSON.stringify(ventaData),
+                success: function (response) {
+                    swal("¡Datos Actualizados!", "Los datos han sido actualizados correctamente.", "success");
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1500);
+                    //console.log(response);
+                    $("#btn_Update").hide(); //Se oculta el botón de editar después de actualizar los datos
+                },
+                error: function () {
+                    //alert("Error al actualizar la tabla, intente de nuevo");
+                    swal("Error", "Error al actualizar los datos, intente de nuevo", "error");
+                }
+            });
+        } else {
+            //alert("No se seleccionó ningún producto para editar");
+            swal("Error", "No se seleccionó ningún producto para editar", "warning");
+        }
+        //La variable editando pasa a false, ya que se dejo de editar 
+        editando = false;
+    });
 }
