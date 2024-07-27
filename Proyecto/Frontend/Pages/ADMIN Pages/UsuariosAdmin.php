@@ -25,7 +25,8 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 
     <!--sweetalert-->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
 
     <style>
         .form-select {
@@ -47,6 +48,7 @@
         .full-width {
             width: 100%;
         }
+
     </style>
 </head>
 
@@ -74,59 +76,55 @@
         <!-- Registrar Producto -->
         <div class="container">
             <div class="container_registro">
-                <!--Registro Venta-->
+                <!--Registro Usuario-->
                 <form action="" class="form-control formulario_registro" id="form-control">
                     <div class="accordion" id="accordionExample">
 
-                        <!--Accordion 1 Registrar Venta-->
+                        <!--Accordion 1 Registrar Usuario-->
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="accordionBTN">
-                                    Realizar Venta
+                                    Actualizar Usuario
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <h2 style="margin-bottom: 10px;">Registro de Venta</h2>
+                                    <h2 style="margin-bottom: 10px;">Registro de Usuarios</h2>
 
                                     <div>
-                                        <label for="selUsuario">Seleccione un Usuario:</label>
-                                        <select class="form-select" name="" id="selUsuario">
-                                            <option value="" selected>Seleccione Usuario</option>
+                                        <label for="txtNombre">Nombre:</label>
+                                        <input class="form-control" type="text" name="" id="txtNombre" placeholder="Digite el nombre del usuario">
+
+                                        <label for="txtApellido">Apellidos:</label>
+                                        <input class="form-control" type="text" name="" id="txtApellido" placeholder="Digite los apellidos del usuario">
+                                    </div>
+
+                                    <label for="txtEmail">Email:</label>
+                                    <input class="form-control" type="text" name="" id="txtEmail" placeholder="Digite el email del usuario">
+
+                                    <div>
+                                        <label for="selRol" hidden>Seleccione un Rol:</label>
+                                        <select class="form-select" name="" id="selRol" hidden>
+                                            <option value="" selected>Seleccione el Rol</option>
+                                            <option value="2">Administrador</option>
+                                            <option value="1">Usuario</option>
                                         </select>
-
-                                        <label for="selPrenda">Seleccione un Prenda:</label>
-                                        <select class="form-select" name="" id="selPrenda">
-                                            <option value="" selected>Seleccione la Prenda</option>
-                                        </select>
                                     </div>
 
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label for="txtStock">Stock Actual:</label>
-                                            <input class="form-control half-width" type="number" name="" id="txtStock" placeholder="Stock" readonly>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <label for="txtUnd">Ingrese la Cantidad a Comprar:</label>
-                                            <input class="form-control half-width" type="number" name="" id="txtUnd" placeholder="Unidades / Cantidad Deseada">
-                                        </div>
-                                    </div>
 
-                                    <label for="selPrenda">Descripcion:</label>
-                                    <input class="form-control" type="text" name="" id="txtDescripcion" placeholder="Descripcion">
 
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label for="txtFecha">Fecha de la Compra:</label>
-                                            <input class="form-control" type="date" name="" id="txtFecha" placeholder="Fecha" readonly>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <label for="txtPrecio">Precio Total:</label>
-                                            <input class="form-control" type="text" name="" id="txtPrecio" placeholder="Precio Total ₡" readonly>
-                                        </div>
-                                    </div>
+                                    <label for="txtTelefono">Telefono:</label>
+                                    <input class="form-control" type="text" name="" id="txtTelefono" placeholder="Digite el numero de telefono del usuario">
 
-                                    <button type="submit" class="btn btn-dark" id="btn_RegistrarVenta" style="margin-top: 15px;">Realizar Venta</button>
+                                    <label for="txtDireccion">Direccion:</label>
+                                    <input class="form-control" type="text" name="" id="txtDireccion" placeholder="Digite la direccion del usuario">
+
+                                    <label for="txtPassword" hidden>Password:</label>
+                                    <input class="form-control" type="text" name="" id="txtPassword" placeholder="Digite el password del usuario" hidden>
+
+                                    <button type="submit" class="btn btn-dark" id="btn_RegistrarUsuario" style="margin-top: 15px;">Realizar actualizacion del usuario</button>
+                                    <button type="submit" class="btn btn-dark" id="btn_Update" style="margin-top: 15px; margin-left: 5px; display: none;">Actualizar Campos</button>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -135,6 +133,40 @@
             </div>
         </div>
     </main>
+
+    <!-- Tabla Administrar -->
+    <h2 id="tituloProd">Tabla de Usuarios</h2>
+
+    <div id="ReporteUsuario">
+        <div class="tabla">
+            <table class="table table-dark">
+                <thead>
+                    <tr class="table-active">
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Email</th>
+                        <th>Telefono</th>
+                        <th>Direccion</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody id="TablaRepUsuario">
+                    <!-- Llenado dinámico mediante JS -->
+                </tbody>
+
+            </table>
+
+            <!-- Paginación dinámica -->
+            <nav>
+                <ul class="pagination" id="pagination">
+                    <!-- Llenado de Paginación dinámica -->
+                </ul>
+            </nav>
+
+        </div>
+    </div>
 
 </body>
 
