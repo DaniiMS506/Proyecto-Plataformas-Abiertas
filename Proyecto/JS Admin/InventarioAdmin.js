@@ -75,6 +75,10 @@ $(document).ready(function () {
                 // Limpiar campos después de la venta exitosa
                 $('#selPrenda').val('');
                 $('#txtCantidad').val('');
+                // Refrescar la página después de 2 segundos
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
             },
             error: function (error) {
                 console.error("Error al registrar Inventario:", error);
@@ -87,8 +91,8 @@ $(document).ready(function () {
 });
 
 ////Cargar datos del inventario a la tabla
-$(document).ready(function(){
-    
+$(document).ready(function () {
+
     ////////////////////////////////////////
     /* Llenado de la Tabla */
     ////////////////////////////////////////
@@ -178,7 +182,7 @@ $(document).ready(function(){
 /* DELETE */
 /////////////////////////////////////////////////////////////////////////
 
-function eliminarInventario(idInventario){
+function eliminarInventario(idInventario) {
     // Confirmar con SweetAlert antes de eliminar
     swal({
         title: "¿Estás seguro?",
