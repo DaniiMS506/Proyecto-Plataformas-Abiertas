@@ -112,7 +112,36 @@
             </div>
         </div>
     </main>
+        <!-- Tabla Administrar -->
+    <h2 id="tituloProd">Tabla de Inventario</h2>
 
+    <div id="ReporteInventario">
+        <div class="tabla">
+            <table class="table table-dark">
+                <thead>
+                    <tr class="table-active">
+                        <th>#</th>
+                        <th>idPrenda</th>
+                        <th>Cantidad</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+            <tbody id="TablaRepInventario">
+                <!-- Llenado dinámico mediante JS -->
+            </tbody>
+
+            </table>
+
+        <!-- Paginación dinámica -->
+        <nav>
+            <ul class="pagination" id="pagination">
+                <!-- Llenado de Paginación dinámica -->
+            </ul>
+        </nav>
+
+        </div>
+    </div>
 </body>
 
 <!-- JS -->
