@@ -1,8 +1,8 @@
 # Proyecto Desarrollo con Plataformas Abiertas
-By, Kendal Daniel Muñoz Solano & Daniel Alonso Meneses Chavarria.
+Proyecto desarrollado por: Kendal Daniel Muñoz Solano & Daniel Alonso Meneses Chavarria.
 
 ## Descripción.
-Este proyecto consiste en el desarrollo de un sitio web para una tienda de ropa. La plataforma contará con una base de datos integrada y hará uso de diversas APIs. El sistema permitirá la gestión de usuarios/empleados mediante inserciones de datos, mientras que los jefes/administradores tendrán capacidades adicionales para realizar inserciones, actualizaciones y eliminaciones de registros.
+Este proyecto consiste en el desarrollo de un sitio web para una tienda de ropa. La plataforma contará con una base de datos integrada y hará uso de diversas APIs. El sistema permitirá a los usuarios/empleados realizar inserciones de datos y visualizar algunos datos relevantes; mientras que los jefes/administradores se les permitirá la gestión, y tendrán capacidades adicionales para realizar inserciones, actualizaciones y eliminaciones de registros. La interfaz incluye funcionalidades de administración de inventarios, marcas, prendas y ventas, proporcionando una solución completa para la gestión de una tienda de ropa.
 
 ## Tecnologías Implementadas
 
