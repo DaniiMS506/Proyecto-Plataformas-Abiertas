@@ -74,8 +74,8 @@ ScrollReveal({
 
 ScrollReveal().reveal('.navbar, .carousel, .header', { origin: 'top' });
 ScrollReveal().reveal('.recent-sales, .card', { origin: 'bottom' });
-ScrollReveal().reveal('.arrows, .table', { origin: 'left' });
-ScrollReveal().reveal('.thumbnail, .footer', { origin: 'right' });
+ScrollReveal().reveal('.arrows, .table, .footer', { origin: 'left' });
+ScrollReveal().reveal('.thumbnail', { origin: 'right' });
 
 
 
