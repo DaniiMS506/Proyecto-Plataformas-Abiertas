@@ -27,6 +27,7 @@ El Proyecto Desarrollo con Plataformas Abiertas está organizado en una estructu
     2. JS Admin: Archivos JavaScript específicos para las funcionalidades administrativas. 
 
 ### Estructura de Carpetas y Archivos del Proyecto:
+```
 └── 📁Proyecto
     └── 📁API's
         └── 📁Public
@@ -117,6 +118,8 @@ El Proyecto Desarrollo con Plataformas Abiertas está organizado en una estructu
         └── PrendaAdmin.js
         └── UserAdmin.js
         └── VentasAdmin.js
+    └── readme.md
+```
 
 ##
 ###
