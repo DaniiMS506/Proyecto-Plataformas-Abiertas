@@ -17,12 +17,12 @@ El Proyecto Desarrollo con Plataformas Abiertas está organizado en una estructu
     2. IMG: Almacena todas las imágenes utilizadas en el sitio web, como logotipos, imágenes de productos y fondos.
     3. index.html y Login.html: Páginas principales de acceso público para el inicio y login del sitio web.
 
-3. Pages:
-    1. ADMIN Pages: Páginas dedicadas específicamente a los administradores/jefes para gestionar inventario, marcas, prendas, entre otros.
-    2. USER Pages: Páginas específicas para los usuarios/empleados como Inventario, Marcas, Prendas, etc.
-    3. PHP: Carpeta que contiene scripts PHP esenciales para el logout.php y ValidarLogin.php.
+    4. Pages:
+        1. ADMIN Pages: Páginas dedicadas específicamente a los administradores/jefes para gestionar inventario, marcas, prendas, entre otros.
+        2. USER Pages: Páginas específicas para los usuarios/empleados como Inventario, Marcas, Prendas, etc.
+        3. PHP: Carpeta que contiene scripts PHP esenciales para el logout.php y ValidarLogin.php.
 
-4. JS:
+3. JS:
     1. Contiene archivos JavaScript para manejar las interacciones del lado del cliente, como animaciones de login, scripts para la página de inicio, inventario, marca, prendas, reporte de ventas, etc.
     2. JS Admin: Archivos JavaScript específicos para las funcionalidades administrativas. 
 
